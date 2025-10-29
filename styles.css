@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: linear-gradient(135deg, #d4e4dd 0%, #a8c9b8 50%, #7fa693 100%);
+    background: linear-gradient(135deg, #f5f0e8 0%, #e8dcc8 50%, #d4c4a8 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
