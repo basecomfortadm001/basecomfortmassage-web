@@ -82,6 +82,12 @@ h1, h2, h3 {
     transform: translateY(-100%);
 }
 
+/* Add background to navbar when mobile menu is open (home page only, initial state) */
+body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
+    background: #f4f0e8;
+    border-bottom: 1px solid #000;
+}
+
 .nav-content {
     display: flex;
     justify-content: space-between;
@@ -234,13 +240,13 @@ h1, h2, h3 {
 /* Mobile Menu */
 .mobile-menu {
     position: fixed;
-    top: 0;
+    top: calc(45px + 100px); /* reviews bar + navbar height */
     left: calc(-100% + 50px);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 145px);
     z-index: 1000;
     pointer-events: none;
-    transition: left 0.5s ease;
+    transition: left 0.5s ease, top 0.3s ease, height 0.3s ease;
 }
 
 .mobile-menu.active {
@@ -270,8 +276,14 @@ h1, h2, h3 {
     max-width: 400px;
     height: 100%;
     background: #ebe3d5;
-    padding-top: 140px;
+    padding-top: 40px;
     overflow-y: auto;
+}
+
+/* Adjust mobile menu position when navbar is scrolled (reviews bar hidden) */
+.navbar.scrolled ~ .mobile-menu {
+    top: 100px; /* just navbar height */
+    height: calc(100vh - 100px);
 }
 
 .mobile-menu-list {
@@ -1283,18 +1295,5 @@ body.massages-page .hamburger-line {
     background: #322f31;
 }
 
-/* Mobile menu z-index fix for massages page */
-/* Strategy: Hamburger must be visible above everything */
-body.massages-page .nav-left {
-    position: relative;
-    z-index: 10001;
-}
-
-body.massages-page .hamburger {
-    position: relative;
-    z-index: 10002;
-}
-
-body.massages-page .mobile-menu {
-    z-index: 10000;
-}
+/* Mobile menu positioning for massages page */
+/* Note: General positioning now handled globally, these are massages-specific overrides */
