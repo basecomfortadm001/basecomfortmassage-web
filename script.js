@@ -6,6 +6,35 @@ const reviewsBar = document.getElementById('reviewsBar');
 const navbar = document.getElementById('navbar');
 const scrollingText = document.getElementById('scrollingText');
 
+// Mobile menu functionality
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+const logo = document.querySelector('.logo');
+
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    const isActive = mobileMenu.classList.contains('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
+
+    // Hide/show logo
+    if (logo) {
+        logo.style.opacity = isActive ? '0' : '1';
+        logo.style.pointerEvents = isActive ? 'none' : 'auto';
+    }
+}
+
+hamburger.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+
+// Close menu when clicking on a menu item
+document.querySelectorAll('.mobile-menu-item a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMenu();
+    });
+});
+
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -64,8 +93,8 @@ document.querySelectorAll('button').forEach(button => {
 // Footer accordion functionality (mobile only)
 document.querySelectorAll('.footer-accordion-header').forEach(header => {
     header.addEventListener('click', function() {
-        // Only activate on mobile (screen width <= 768px)
-        if (window.innerWidth <= 768) {
+        // Only activate on mobile (screen width <= 980px)
+        if (window.innerWidth <= 980) {
             const accordion = this.parentElement;
             const isActive = accordion.classList.contains('active');
 

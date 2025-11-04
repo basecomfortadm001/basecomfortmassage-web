@@ -23,7 +23,7 @@ h1, h2, h3 {
 .reviews-bar {
     background: #ebe3d5;
     border-bottom: 1px solid #000;
-    padding: 15px 20px;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -46,7 +46,7 @@ h1, h2, h3 {
 }
 
 .review-item {
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -54,7 +54,7 @@ h1, h2, h3 {
 
 .stars {
     color: #cc9369;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .desktop-only {
@@ -64,11 +64,11 @@ h1, h2, h3 {
 /* Section 2: Navigation */
 .navbar {
     position: fixed;
-    top: 60px;
+    top: 45px;
     left: 0;
     right: 0;
-    z-index: 999;
-    padding: 20px 50px;
+    z-index: 1001;
+    padding: 15px 50px;
     transition: all 0.3s ease;
 }
 
@@ -121,7 +121,7 @@ h1, h2, h3 {
     font-style: italic;
     letter-spacing: 1px;
     color: #fff;
-    transition: color 0.3s;
+    transition: color 0.3s, opacity 0.3s;
 }
 
 .navbar.scrolled .nav-center .logo {
@@ -159,6 +159,183 @@ h1, h2, h3 {
     border-color: #be936a;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    position: relative;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all 0.5s ease;
+    transform-origin: center;
+    position: absolute;
+    left: 0;
+}
+
+.hamburger-line:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+    bottom: 0;
+}
+
+.navbar.scrolled .hamburger-line {
+    background: #322f31;
+}
+
+.hamburger.active .hamburger-line {
+    background: #322f31;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    top: 8px;
+    transform: rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    bottom: 8px;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: calc(-100% + 50px);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+    transition: left 0.5s ease;
+}
+
+.mobile-menu.active {
+    left: 0;
+    pointer-events: all;
+}
+
+.mobile-menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+
+.mobile-menu.active .mobile-menu-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 400px;
+    height: 100%;
+    background: #ebe3d5;
+    padding-top: 140px;
+    overflow-y: auto;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.5s;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.7s;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(5) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.9s;
+}
+
+.mobile-menu.active .mobile-menu-item:nth-child(6) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.1s;
+}
+
+.mobile-menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    color: #322f31;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    height: 50px;
+}
+
+.mobile-menu-item a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.mobile-menu-cta a {
+    background: #be936a;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin: 20px;
+    border-radius: 50px;
+    height: auto;
+    padding: 15px 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.mobile-menu-cta a:hover {
+    background: #cc9369;
+}
+
 /* Section 3: Hero */
 .hero {
     height: 100vh;
@@ -167,7 +344,7 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 .hero::before {
@@ -226,14 +403,14 @@ h1, h2, h3 {
     background: #ebe3d5;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
-    padding: 30px 0;
+    padding: 20px 0;
     overflow: hidden;
 }
 
 .scrolling-text {
     display: flex;
     white-space: nowrap;
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
 }
 
@@ -693,7 +870,7 @@ h1, h2, h3 {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
     .desktop-only {
         display: none;
     }
@@ -706,17 +883,43 @@ h1, h2, h3 {
         padding: 15px 20px;
     }
 
-    .nav-left, .nav-right {
-        display: none;
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .nav-left {
+        justify-content: flex-start;
+        flex: 0;
+    }
+
+    .nav-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-right {
+        flex: 0;
+        display: flex;
     }
 
     .nav-center .logo {
         font-size: 24px;
     }
 
+    .nav-right .btn-nav {
+        padding: 8px 15px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
     .hero {
         height: 70vh;
-        margin-top: 60px;
+        margin-top: 45px;
     }
 
     .hero h1 {
@@ -728,7 +931,7 @@ h1, h2, h3 {
     }
 
     .scrolling-text {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .massages-intro, .massages-list, .about-location,
@@ -828,7 +1031,8 @@ h1, h2, h3 {
     .footer-accordion-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding: 0;
+        transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
     .footer-accordion-content p,
