@@ -5,6 +5,7 @@ let scrolledPastHero = false;
 const reviewsBar = document.getElementById('reviewsBar');
 const navbar = document.getElementById('navbar');
 const scrollingText = document.getElementById('scrollingText');
+const logoImg = document.getElementById('logoImg');
 
 // Mobile menu functionality
 const hamburger = document.getElementById('hamburger');
@@ -18,11 +19,7 @@ function toggleMenu() {
     const isActive = mobileMenu.classList.contains('active');
     document.body.style.overflow = isActive ? 'hidden' : '';
 
-    // Hide/show logo
-    if (logo) {
-        logo.style.opacity = isActive ? '0' : '1';
-        logo.style.pointerEvents = isActive ? 'none' : 'auto';
-    }
+    // Logo stays visible in mobile menu - no need to hide it
 }
 
 hamburger.addEventListener('click', toggleMenu);
@@ -37,33 +34,62 @@ document.querySelectorAll('.mobile-menu-item a').forEach(link => {
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const isMassagesPage = document.body.classList.contains('massages-page');
 
-    // Hide reviews bar on any scroll down from top
-    if (scrollTop > 10) {
-        reviewsBar.classList.add('hidden');
+    if (isMassagesPage) {
+        // === MASSAGES PAGE BEHAVIOR ===
+
+        // 1. Hide reviews bar on first scroll down (scrollTop > 10)
+        if (scrollTop > 10) {
+            reviewsBar.classList.add('hidden');
+            // Move navbar to top when reviews bar is hidden
+            navbar.classList.add('scrolled');
+        } else {
+            // Show reviews bar only at the very top
+            reviewsBar.classList.remove('hidden');
+            navbar.classList.remove('scrolled');
+        }
+
+        // 2. Hide navbar on scroll down (after 150px), show on scroll up
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            // Scrolling down - hide navbar
+            navbar.classList.add('hidden');
+        } else if (scrollTop < lastScrollTop) {
+            // Scrolling up - show navbar immediately
+            navbar.classList.remove('hidden');
+        }
     } else {
-        reviewsBar.classList.remove('hidden');
+        // === HOME PAGE BEHAVIOR (original) ===
+
+        // Hide reviews bar on any scroll down from top
+        if (scrollTop > 10) {
+            reviewsBar.classList.add('hidden');
+        } else {
+            reviewsBar.classList.remove('hidden');
+        }
+
+        // Add background to navbar when scrolled past initial position
+        if (scrollTop > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Hide/show navbar based on scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > 150) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
     }
 
-    // Add background to navbar when scrolled past initial position
-    if (scrollTop > 10) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    // Animate scrolling text based on scroll position (only on home page)
+    if (scrollingText) {
+        const scrollPercent = scrollTop * 0.5; // Adjust speed
+        scrollingText.style.transform = `translateX(-${scrollPercent}px)`;
     }
-
-    // Hide/show navbar based on scroll direction
-    if (scrollTop > lastScrollTop && scrollTop > 150) {
-        // Scrolling down
-        navbar.classList.add('hidden');
-    } else {
-        // Scrolling up
-        navbar.classList.remove('hidden');
-    }
-
-    // Animate scrolling text based on scroll position
-    const scrollPercent = scrollTop * 0.5; // Adjust speed
-    scrollingText.style.transform = `translateX(-${scrollPercent}px)`;
 
     lastScrollTop = scrollTop;
 });
