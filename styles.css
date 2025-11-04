@@ -276,7 +276,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     max-width: 400px;
     height: 100%;
     background: #ebe3d5;
-    padding-top: 40px;
+    padding-top: 15px;
     overflow-y: auto;
 }
 
