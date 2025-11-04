@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,112 +7,713 @@
 
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: linear-gradient(135deg, #f5f0e8 0%, #e8dcc8 50%, #d4c4a8 100%);
-    min-height: 100vh;
+    background: #f4f0e8;
+    color: #322f31;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Georgia', 'Palatino', serif;
+    font-weight: 400;
+}
+
+/* Section 1: Reviews Bar */
+.reviews-bar {
+    background: #ebe3d5;
+    border-bottom: 1px solid #000;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.reviews-bar.hidden {
+    transform: translateY(-100%);
+}
+
+.reviews-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.review-item {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    color: #cc9369;
+    font-size: 16px;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* Section 2: Navigation */
+.navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 20px 50px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: #f4f0e8;
+    border-bottom: 1px solid #000;
+    top: 0;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.nav-left a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.nav-left a:hover {
+    opacity: 0.7;
+}
+
+.navbar.scrolled .nav-left a {
+    color: #322f31;
+}
+
+.nav-center .logo {
+    font-size: 32px;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar.scrolled .nav-center .logo {
+    color: #322f31;
+}
+
+.btn-nav {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    background: #be936a;
+    color: #fff;
+    border-color: #be936a;
+    transform: rotate(-5deg);
+}
+
+.navbar.scrolled .btn-nav {
+    border-color: #000;
+    color: #322f31;
+}
+
+.navbar.scrolled .btn-nav:hover {
+    background: #be936a;
+    color: #fff;
+    border-color: #be936a;
+}
+
+/* Section 3: Hero */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2c4a3e;
+    position: relative;
+    margin-top: 60px;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
     padding: 20px;
 }
 
-.content {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 60px 40px;
-    box-shadow: 0 8px 32px rgba(44, 74, 62, 0.15);
-    border: 1px solid rgba(168, 201, 184, 0.3);
+.hero h1 {
+    font-size: 70px;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.logo {
-    font-size: 3rem;
-    font-weight: 400;
+.hero-subtitle {
+    font-size: 20px;
     margin-bottom: 40px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(127, 166, 147, 0.2);
-    color: #3d6651;
+    font-family: 'Helvetica', sans-serif;
 }
 
-.coming-soon h2 {
-    font-size: 2.5rem;
+.btn-hero {
+    background: transparent;
+    border: 2px dotted #fff;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #be936a;
+    border-style: solid;
+    border-color: #be936a;
+    transform: rotate(-5deg);
+}
+
+/* Section 4: Scrolling Message */
+.scrolling-message {
+    background: #ebe3d5;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.scrolling-text {
+    display: flex;
+    white-space: nowrap;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.scrolling-text span {
+    padding-right: 100px;
+}
+
+/* Section 5: Massages */
+.massages-section {
+    background: #f4f0e8;
+}
+
+.massages-intro {
+    background: #f5d49c;
+    padding: 80px 50px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.btn-outlined {
+    background: transparent;
+    border: 1px solid #000;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outlined:hover {
+    background: #be936a;
+    color: #fff;
+    border-color: #be936a;
+    transform: rotate(-5deg);
+}
+
+.massages-list {
+    background: #ebe3d5;
+    padding: 80px 50px;
+    border-radius: 50% 50% 0 0 / 60px 60px 0 0;
+    margin-top: -1px;
+    text-align: center;
+}
+
+.section-title-small {
+    font-size: 18px;
+    margin-bottom: 60px;
     font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.massage-item {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.massage-item:last-of-type {
+    margin-bottom: 60px;
+}
+
+.massage-title {
+    font-size: 50px;
+    font-style: italic;
     margin-bottom: 15px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: #5a8570;
 }
 
-.location {
-    font-size: 1.5rem;
+.massage-description {
+    font-size: 16px;
+    font-family: 'Helvetica', sans-serif;
+    color: #666;
+}
+
+.btn-primary {
+    background: #be936a;
+    border: 1px solid #be936a;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #cc9369;
+    border-color: #cc9369;
+    transform: rotate(-5deg);
+}
+
+/* Section 6: About Location */
+.about-location {
+    background: #f4f0e8;
+    padding: 100px 50px;
+    border-top: 1px solid #000;
+}
+
+.info-card {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.card-image {
+    border-radius: 250px 250px 0 0;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.card-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content h3 {
+    font-size: 42px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.company-icon {
+    text-align: center;
+    font-size: 60px;
+    margin: 60px 0;
+    color: #cc9369;
+}
+
+/* Section 7: Gift Card */
+.gift-card-section {
+    background: #d4c4a8;
+    padding: 100px 50px;
+    border-top: 1px solid #000;
+}
+
+.promo-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.promo-card .card-image {
+    border-radius: 300px 300px 0 0;
+}
+
+.promo-card .card-image img {
+    height: 600px;
+}
+
+.promo-card h2 {
+    font-size: 60px;
+    font-style: italic;
     margin-bottom: 30px;
-    opacity: 0.9;
-    color: #4a7060;
+    line-height: 1.1;
 }
 
-.tagline {
-    font-size: 1.2rem;
+.promo-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Section 8: Booking */
+.booking-section {
+    background: #ebe3d5;
+    padding: 100px 50px;
+    border-top: 1px solid #000;
+}
+
+/* Section 9: Opening Hours */
+.opening-hours {
+    background: #f4f0e8;
+    padding: 100px 50px;
+    border-top: 1px solid #000;
+}
+
+.hours-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 500px;
+    background: url('assets/open.png') center/cover;
+    border-radius: 250px 250px 0 0;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.hours-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 250px 250px 0 0;
+}
+
+.hours-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hours-subtitle {
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hours-title {
+    font-size: 60px;
     font-style: italic;
     margin-bottom: 40px;
-    opacity: 0.85;
-    color: #5a8570;
 }
 
-.info {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #3d6651;
+/* Section 10: Social */
+.social-section {
+    background: #f4f0e8;
+    padding: 100px 50px;
+    text-align: center;
+    border-top: 1px solid #000;
 }
 
-.info p {
+.section-title {
+    font-size: 50px;
+    font-style: italic;
+    margin-bottom: 60px;
+}
+
+.instagram-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto 50px;
+}
+
+.insta-photo {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+
+.insta-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.insta-photo:hover img {
+    transform: scale(1.05);
+}
+
+/* Section 11: Footer */
+.footer {
+    background: #ebe3d5;
+    padding: 80px 50px;
+    border-top: 1px solid #000;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 80px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.footer-contact {
+    font-size: 15px;
     margin-bottom: 10px;
+    font-family: 'Helvetica', sans-serif;
 }
 
-/* Responsive design */
+.newsletter {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    font-size: 15px;
+    background: transparent;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.btn-newsletter {
+    background: #be936a;
+    border: 1px solid #be936a;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-newsletter:hover {
+    background: #cc9369;
+    border-color: #cc9369;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    font-size: 15px;
+    line-height: 1.8;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.footer-column a {
+    display: block;
+    color: #322f31;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-family: 'Helvetica', sans-serif;
+    transition: opacity 0.3s;
+}
+
+.footer-column a:hover {
+    opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .massage-title {
+        font-size: 40px;
+    }
+
+    .promo-card h2, .hours-title, .section-title {
+        font-size: 45px;
+    }
+
+    .info-card, .promo-card {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content h3 {
+        font-size: 35px;
+    }
+}
+
 @media (max-width: 768px) {
-    .logo {
-        font-size: 2rem;
+    .desktop-only {
+        display: none;
     }
 
-    .coming-soon h2 {
-        font-size: 1.8rem;
-        letter-spacing: 4px;
+    .reviews-content {
+        justify-content: center;
     }
 
-    .location {
-        font-size: 1.2rem;
+    .navbar {
+        padding: 15px 20px;
     }
 
-    .tagline {
-        font-size: 1rem;
+    .nav-left, .nav-right {
+        display: none;
     }
 
-    .content {
-        padding: 40px 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
+    .nav-center .logo {
+        font-size: 24px;
     }
 
-    .coming-soon h2 {
-        font-size: 1.5rem;
-        letter-spacing: 3px;
+    .hero {
+        height: 70vh;
+        margin-top: 60px;
     }
 
-    .location {
-        font-size: 1rem;
+    .hero h1 {
+        font-size: 35px;
     }
 
-    .content {
-        padding: 30px 20px;
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .scrolling-text {
+        font-size: 18px;
+    }
+
+    .massages-intro, .massages-list, .about-location,
+    .gift-card-section, .booking-section, .opening-hours,
+    .social-section, .footer {
+        padding: 60px 20px;
+    }
+
+    .massage-title {
+        font-size: 32px;
+    }
+
+    .card-content h3 {
+        font-size: 28px;
+    }
+
+    .promo-card h2, .hours-title, .section-title {
+        font-size: 32px;
+    }
+
+    .instagram-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card-image img {
+        height: 350px;
+    }
+
+    .promo-card .card-image img {
+        height: 400px;
+    }
+
+    .hours-card {
+        height: 400px;
     }
 }
