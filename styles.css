@@ -248,9 +248,9 @@ h1, h2, h3 {
 
 .massages-intro {
     background: #f5d49c;
-    padding: 80px 50px;
+    padding: 80px 50px 120px;
     text-align: center;
-    border-bottom: 1px solid #000;
+    border-bottom: none;
 }
 
 .intro-text {
@@ -282,9 +282,13 @@ h1, h2, h3 {
 .massages-list {
     background: #ebe3d5;
     padding: 80px 50px;
-    border-radius: 50% 50% 0 0 / 60px 60px 0 0;
-    margin-top: -1px;
+    border-radius: 50% 50% 0 0 / 150px 150px 0 0;
+    margin-top: 40px;
     text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
 .section-title-small {
@@ -497,8 +501,8 @@ h1, h2, h3 {
 .instagram-gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1400px;
+    gap: 15px;
+    max-width: 900px;
     margin: 0 auto 50px;
 }
 
@@ -611,6 +615,49 @@ h1, h2, h3 {
     opacity: 0.6;
 }
 
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 20px 0 0 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-legal a {
+    color: #322f31;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Helvetica', sans-serif;
+    transition: opacity 0.3s;
+}
+
+.footer-legal a:hover {
+    opacity: 0.6;
+}
+
+/* Hide accordion elements on desktop */
+.footer-accordion-icon {
+    display: none;
+}
+
+.footer-accordion-header {
+    cursor: default;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
@@ -627,6 +674,18 @@ h1, h2, h3 {
 
     .info-card, .promo-card {
         grid-template-columns: 1fr;
+    }
+
+    .info-card-reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card-reverse .card-image {
+        order: 2;
+    }
+
+    .info-card-reverse .card-content {
+        order: 1;
     }
 
     .card-content h3 {
@@ -695,6 +754,19 @@ h1, h2, h3 {
         gap: 15px;
     }
 
+    .info-card-reverse {
+        display: grid !important;
+        grid-template-columns: 1fr;
+    }
+
+    .info-card-reverse .card-image {
+        order: 0 !important;
+    }
+
+    .info-card-reverse .card-content {
+        order: 0 !important;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -702,7 +774,97 @@ h1, h2, h3 {
 
     .footer-columns {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0;
+    }
+
+    .footer-column {
+        margin-bottom: 0;
+    }
+
+    .footer-accordion {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: -1px;
+        background: #ebe3d5;
+        overflow: hidden;
+    }
+
+    .footer-accordion:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-accordion:last-child {
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-accordion-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer !important;
+        padding: 6px 12px;
+        margin: 0 !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .footer-accordion-icon {
+        display: inline-block !important;
+        font-size: 14px;
+        transition: transform 0.3s ease;
+        font-weight: 300;
+        line-height: 1;
+        margin-left: 8px;
+    }
+
+    .footer-accordion.active .footer-accordion-icon {
+        transform: rotate(45deg);
+    }
+
+    .footer-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .footer-accordion-content p,
+    .footer-accordion-content a {
+        font-size: 13px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 3px 12px;
+        display: block;
+    }
+
+    .footer-accordion.active .footer-accordion-content {
+        max-height: 150px;
+        padding: 5px 0 8px 0;
+    }
+
+    .footer-bottom {
+        border-top: none;
+        padding: 12px 0 0 0;
+        margin-top: 15px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        margin: 0 0 6px 0;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 6px;
+        margin: 0;
+        padding: 0 0 15px 0;
+    }
+
+    .footer-legal a {
+        font-size: 12px;
     }
 
     .card-image img {

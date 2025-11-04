@@ -60,3 +60,24 @@ document.querySelectorAll('button').forEach(button => {
         console.log('Button clicked:', this.textContent);
     });
 });
+
+// Footer accordion functionality (mobile only)
+document.querySelectorAll('.footer-accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+        // Only activate on mobile (screen width <= 768px)
+        if (window.innerWidth <= 768) {
+            const accordion = this.parentElement;
+            const isActive = accordion.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.footer-accordion').forEach(acc => {
+                acc.classList.remove('active');
+            });
+
+            // Toggle current accordion
+            if (!isActive) {
+                accordion.classList.add('active');
+            }
+        }
+    });
+});
