@@ -37,18 +37,6 @@ h1, h2, h3 {
     transition: transform 0.3s ease;
 }
 
-/* Extend reviews bar upwards to cover overscroll area */
-.reviews-bar::before {
-    content: '';
-    position: absolute;
-    top: -100vh;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    background: #ebe3d5;
-    z-index: -1;
-}
-
 .reviews-bar.hidden {
     transform: translateY(-100%);
 }
