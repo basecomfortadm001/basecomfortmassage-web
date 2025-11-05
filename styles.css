@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: #322f31;
+    background: #f4f0e8;
     color: #322f31;
     line-height: 1.6;
     overflow-x: hidden;
@@ -37,6 +37,18 @@ h1, h2, h3 {
     right: 0;
     z-index: 1000;
     transition: transform 0.3s ease;
+}
+
+/* Extend reviews bar upwards to cover overscroll area */
+.reviews-bar::before {
+    content: '';
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #ebe3d5;
+    z-index: -1;
 }
 
 .reviews-bar.hidden {
