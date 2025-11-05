@@ -7,7 +7,6 @@
 
 html {
     overflow-x: hidden;
-    overscroll-behavior-y: none;
 }
 
 body {
@@ -16,7 +15,6 @@ body {
     color: #322f31;
     line-height: 1.6;
     overflow-x: hidden;
-    overscroll-behavior-y: none;
     min-height: 100vh;
 }
 
