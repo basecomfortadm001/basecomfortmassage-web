@@ -396,14 +396,14 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 /* Section 3: Hero */
 .hero {
-    height: calc(100vh + 45px);
+    height: 100vh;
     background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: -45px;
-    padding-top: 45px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .hero::before {
