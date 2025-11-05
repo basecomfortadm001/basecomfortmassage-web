@@ -26,9 +26,9 @@ h1, h2, h3 {
 
 /* Section 1: Reviews Bar */
 .reviews-bar {
-    background: rgba(235, 227, 213, 0.95);
+    background: #ebe3d5;
     border-bottom: 1px solid #000;
-    padding: 10px 20px;
+    padding: 6px 20px;
     position: fixed;
     top: 0;
     left: 0;
