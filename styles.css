@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: #f4f0e8 url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') top center/cover no-repeat;
+    background: #f4f0e8;
     color: #322f31;
     line-height: 1.6;
     overflow-x: hidden;
@@ -384,14 +384,14 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 /* Section 3: Hero */
 .hero {
-    height: calc(100vh + 120px);
-    background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') center/cover;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') top center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: -120px;
-    padding-top: 120px;
+    margin-top: 0;
+    padding-top: 0;
     z-index: 1;
 }
 
