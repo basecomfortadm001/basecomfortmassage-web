@@ -5,12 +5,19 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+}
+
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: #f4f0e8;
+    background: #322f31;
     color: #322f31;
     line-height: 1.6;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
+    min-height: 100vh;
 }
 
 /* Typography */
