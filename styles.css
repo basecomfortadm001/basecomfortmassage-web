@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
-    background: #f4f0e8;
+    background: #f4f0e8 url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') top center/cover no-repeat;
     color: #322f31;
     line-height: 1.6;
     overflow-x: hidden;
@@ -392,6 +392,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     position: relative;
     margin-top: -120px;
     padding-top: 120px;
+    z-index: 1;
 }
 
 .hero::before {
