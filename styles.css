@@ -402,7 +402,8 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 45px;
+    margin-top: 0;
+    padding-top: 45px;
 }
 
 .hero::before {
