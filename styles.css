@@ -13,7 +13,7 @@ body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
     background: #f4f0e8;
     color: #272b00;
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden;
     min-height: 100vh;
 }
@@ -26,7 +26,7 @@ h1, h2, h3 {
 
 /* Section 1: Reviews Bar */
 .reviews-bar {
-    background: #bec092;
+    background: linear-gradient(135deg, #bec092 0%, #b0ba85 100%);
     border-bottom: 1px solid #272b00;
     padding: 6px 20px;
     position: fixed;
@@ -173,7 +173,7 @@ h1, h2, h3 {
     font-size: 15px;
     font-style: italic;
     font-family: 'Georgia', serif;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-nav:hover {
@@ -398,7 +398,7 @@ h1, h2, h3 {
     font-style: italic;
     font-family: 'Georgia', serif;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-hero:hover {
@@ -436,7 +436,9 @@ h1, h2, h3 {
 
 .massages-intro {
     background: #86895d;
-    padding: 80px 50px 120px;
+    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 120px 50px 160px;
     text-align: center;
     border-bottom: none;
 }
@@ -458,7 +460,7 @@ h1, h2, h3 {
     font-style: italic;
     font-family: 'Georgia', serif;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     color: #272b00;
 }
 
@@ -471,7 +473,9 @@ h1, h2, h3 {
 
 .massages-list {
     background: #f4f0e8;
-    padding: 80px 80px;
+    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 100px 80px;
     border-radius: 30px;
     margin-top: -40px;
     text-align: center;
@@ -494,14 +498,25 @@ h1, h2, h3 {
 .massages-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 60px 80px;
+    gap: 80px 100px;
     max-width: 1200px;
     margin: 0 auto 60px;
 }
 
 .massages-list .massage-item {
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.massages-list .massage-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(39, 43, 0, 0.2), transparent);
 }
 
 .massages-list .btn-primary {
@@ -538,7 +553,7 @@ h1, h2, h3 {
     font-style: italic;
     font-family: 'Georgia', serif;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
@@ -550,7 +565,9 @@ h1, h2, h3 {
 /* Section 6: About Location */
 .about-location {
     background: #f4f0e8;
-    padding: 100px 50px;
+    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 140px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -559,13 +576,26 @@ h1, h2, h3 {
     margin: 0 auto 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 70px;
     align-items: center;
 }
 
 .card-image {
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
+    position: relative;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(84, 88, 47, 0.05), rgba(84, 88, 47, 0.12));
+    z-index: 1;
+    pointer-events: none;
 }
 
 .card-image img {
@@ -574,6 +604,10 @@ h1, h2, h3 {
     object-fit: cover;
     display: block;
     aspect-ratio: 1 / 1;
+}
+
+.card-content {
+    padding: 40px;
 }
 
 .card-content h3 {
@@ -606,8 +640,8 @@ h1, h2, h3 {
 
 /* Section 7: Gift Card */
 .gift-card-section {
-    background: #d4c4a8;
-    padding: 100px 50px;
+    background: linear-gradient(135deg, #d4c4a8 0%, #c8bc9e 100%);
+    padding: 140px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -644,15 +678,17 @@ h1, h2, h3 {
 
 /* Section 8: Booking */
 .booking-section {
-    background: #bec092;
-    padding: 100px 50px;
+    background: linear-gradient(135deg, #bec092 0%, #b0ba85 100%);
+    padding: 140px 50px;
     border-top: 1px solid #272b00;
 }
 
 /* Section 9: Opening Hours */
 .opening-hours {
     background: #f4f0e8;
-    padding: 100px 50px;
+    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 140px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -703,7 +739,9 @@ h1, h2, h3 {
 /* Section 10: Social */
 .social-section {
     background: #f4f0e8;
-    padding: 100px 50px;
+    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 140px 50px;
     text-align: center;
     border-top: 1px solid #272b00;
 }
@@ -727,13 +765,31 @@ h1, h2, h3 {
     overflow: hidden;
     border-radius: 20px;
     border: 1px solid #272b00;
+    position: relative;
+}
+
+.insta-photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(84, 88, 47, 0.08), rgba(84, 88, 47, 0.15));
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.insta-photo:hover::before {
+    opacity: 0.5;
 }
 
 .insta-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .insta-photo:hover img {
@@ -742,8 +798,8 @@ h1, h2, h3 {
 
 /* Section 11: Footer */
 .footer {
-    background: #bec092;
-    padding: 80px 50px;
+    background: linear-gradient(135deg, #bec092 0%, #a8b37e 100%);
+    padding: 100px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -1195,7 +1251,7 @@ h1, h2, h3 {
 .massage-card {
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .massage-card:hover {
@@ -1214,7 +1270,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .massage-card:hover .massage-image img {
