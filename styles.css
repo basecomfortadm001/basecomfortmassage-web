@@ -423,7 +423,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .hero-subtitle {
     font-size: 20px;
     margin-bottom: 40px;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .btn-hero {
@@ -483,6 +483,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     margin: 0 auto 40px;
     font-size: 20px;
     line-height: 1.8;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .btn-outlined {
@@ -542,7 +543,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 .massage-description {
     font-size: 16px;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #666;
 }
 
@@ -603,7 +604,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .card-content p {
     font-size: 16px;
     line-height: 1.8;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .company-icon {
@@ -657,7 +658,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 40px;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Section 8: Booking */
@@ -1251,7 +1252,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-size: 15px;
     line-height: 1.8;
     color: #322f31;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Mobile Styles for Massages Page */
