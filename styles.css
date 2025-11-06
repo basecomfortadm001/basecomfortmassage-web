@@ -1059,7 +1059,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     }
 
     .footer-accordion:first-child {
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-top: none;
     }
 
     .footer-accordion:last-child {
@@ -1072,9 +1072,9 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
         justify-content: space-between;
         align-items: center;
         cursor: pointer !important;
-        padding: 6px 12px;
+        padding: 10px 12px;
         margin: 0 !important;
-        font-size: 14px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
         line-height: 1 !important;
         height: auto !important;
@@ -1083,7 +1083,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
     .footer-accordion-icon {
         display: inline-block !important;
-        font-size: 14px;
+        font-size: 18px;
         transition: transform 0.3s ease;
         font-weight: 300;
         line-height: 1;
@@ -1097,22 +1097,30 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     .footer-accordion-content {
         max-height: 0;
         overflow: hidden;
-        padding: 0;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition: max-height 0.5s ease;
     }
 
     .footer-accordion-content p,
     .footer-accordion-content a {
-        font-size: 13px;
-        line-height: 1.4;
+        font-size: 14px;
+        line-height: 1.6;
         margin: 0;
-        padding: 3px 12px;
+        padding: 2px 12px;
         display: block;
     }
 
+    .footer-accordion-content p:first-child,
+    .footer-accordion-content a:first-child {
+        margin-top: 8px;
+    }
+
+    .footer-accordion-content p:last-child,
+    .footer-accordion-content a:last-child {
+        margin-bottom: 12px;
+    }
+
     .footer-accordion.active .footer-accordion-content {
-        max-height: 150px;
-        padding: 5px 0 8px 0;
+        max-height: 200px;
     }
 
     .footer-bottom {
