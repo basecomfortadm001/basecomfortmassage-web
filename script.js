@@ -13,11 +13,80 @@ const mobileMenu = document.getElementById('mobileMenu');
 const menuOverlay = document.getElementById('menuOverlay');
 const logo = document.querySelector('.logo');
 
+let scrollPosition = 0;
+let menuIsOpen = false;
+
+function preventScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+function updateMenuPosition() {
+    // Check if page is in scrolled state (navbar has scrolled class)
+    const isScrolled = navbar.classList.contains('scrolled');
+
+    if (isScrolled) {
+        mobileMenu.classList.add('scrolled');
+    } else {
+        mobileMenu.classList.remove('scrolled');
+    }
+}
+
 function toggleMenu() {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     const isActive = mobileMenu.classList.contains('active');
-    document.body.style.overflow = isActive ? 'hidden' : '';
+
+    if (isActive) {
+        menuIsOpen = true;
+
+        // Save scroll position first
+        scrollPosition = window.pageYOffset;
+
+        // Update menu position based on scroll state
+        updateMenuPosition();
+
+        // Lock body scroll
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+
+        // Keep navbar and reviews bar states frozen
+        if (scrollPosition > 10) {
+            reviewsBar.classList.add('frozen');
+            navbar.classList.add('frozen');
+        }
+
+        // Prevent scroll on overlay
+        menuOverlay.addEventListener('touchmove', preventScroll, { passive: false });
+        menuOverlay.addEventListener('wheel', preventScroll, { passive: false });
+    } else {
+        // Remove frozen states but preserve current scroll state
+        const currentScrollBeforeRestore = scrollPosition;
+
+        // Restore body scroll
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+
+        // Restore scroll position without triggering scroll events
+        window.scrollTo(0, currentScrollBeforeRestore);
+
+        // Remove frozen classes
+        reviewsBar.classList.remove('frozen');
+        navbar.classList.remove('frozen');
+
+        // Remove event listeners
+        menuOverlay.removeEventListener('touchmove', preventScroll);
+        menuOverlay.removeEventListener('wheel', preventScroll);
+
+        // Mark menu as closed after all operations complete
+        setTimeout(() => {
+            menuIsOpen = false;
+        }, 50);
+    }
 }
 
 hamburger.addEventListener('click', toggleMenu);
@@ -31,28 +100,36 @@ document.querySelectorAll('.mobile-menu-item a').forEach(link => {
 });
 
 window.addEventListener('scroll', () => {
+    // Ignore scroll events when menu is open or closing
+    if (menuIsOpen) {
+        return;
+    }
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const isMassagesPage = document.body.classList.contains('massages-page');
 
     if (isMassagesPage) {
         // === MASSAGES PAGE BEHAVIOR ===
 
-        // 1. Hide reviews bar on first scroll down (scrollTop > 10)
+        // Hide reviews bar on any scroll down from top
         if (scrollTop > 10) {
             reviewsBar.classList.add('hidden');
-            // Move navbar to top when reviews bar is hidden
+        } else {
+            reviewsBar.classList.remove('hidden');
+        }
+
+        // Add background to navbar when scrolled past initial position
+        if (scrollTop > 10) {
             navbar.classList.add('scrolled');
         } else {
-            // Show reviews bar only at the very top
-            reviewsBar.classList.remove('hidden');
             navbar.classList.remove('scrolled');
         }
 
-        // 2. Hide navbar on scroll down (after 150px), show on scroll up
+        // Hide/show navbar based on scroll direction
         if (scrollTop > lastScrollTop && scrollTop > 150) {
             // Scrolling down - hide navbar
             navbar.classList.add('hidden');
-        } else if (scrollTop < lastScrollTop) {
+        } else {
             // Scrolling up - show navbar immediately
             navbar.classList.remove('hidden');
         }

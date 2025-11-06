@@ -249,29 +249,51 @@ h1, h2, h3 {
 .mobile-menu {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100vh;
-    z-index: 999;
-    background: #bec092;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
+    z-index: 998;
+    transition: left 0.3s ease, top 0.3s ease;
+    pointer-events: none;
 }
 
 .mobile-menu.active {
-    transform: translateX(0);
+    left: 0;
+    pointer-events: all;
+}
+
+.mobile-menu.scrolled {
+    top: -35px;
 }
 
 .mobile-menu-overlay {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.mobile-menu.active .mobile-menu-overlay {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .mobile-menu-content {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
     height: 100%;
+    background: #bec092;
     padding-top: 80px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu-list {
@@ -1261,7 +1283,6 @@ h1, h2, h3 {
 
 /* Massages Page Specific - Dark Navbar from Start */
 body.massages-page .navbar {
-    border-bottom: 1px solid #272b00;
     z-index: 1001;
 }
 
@@ -1271,10 +1292,11 @@ body.massages-page .navbar.scrolled {
     top: 0;
 }
 
-/* Desktop only - add background for massages page */
+/* Desktop only - add background and border for massages page */
 @media (min-width: 981px) {
     body.massages-page .navbar {
         background: #f4f0e8;
+        border-bottom: 1px solid #272b00;
     }
 }
 
