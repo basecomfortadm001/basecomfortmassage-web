@@ -469,11 +469,11 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 /* Section 5: Massages */
 .massages-section {
-    background: #f4f0e8;
+    background: #86895d;
 }
 
 .massages-intro {
-    background: #f5d49c;
+    background: #86895d;
     padding: 80px 50px 120px;
     text-align: center;
     border-bottom: none;
@@ -488,7 +488,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-outlined {
-    background: transparent;
+    background: #f4f0e8;
     border: 1px solid #000;
     padding: 12px 40px;
     border-radius: 50px;
@@ -497,6 +497,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-family: 'Georgia', serif;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: #322f31;
 }
 
 .btn-outlined:hover {
@@ -507,7 +508,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .massages-list {
-    background: #ebe3d5;
+    background: #f4f0e8;
     padding: 80px 50px;
     border-radius: 50% 50% 0 0 / 150px 150px 0 0;
     margin-top: 40px;
@@ -519,10 +520,11 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .section-title-small {
-    font-size: 18px;
+    font-size: 32px;
     margin-bottom: 60px;
     font-weight: 300;
     letter-spacing: 2px;
+    color: #272b00;
 }
 
 .massage-item {
@@ -540,12 +542,13 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-size: 50px;
     font-style: italic;
     margin-bottom: 15px;
+    color: #272b00;
 }
 
 .massage-description {
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
-    color: #666;
+    color: #272b00;
 }
 
 .btn-primary {
