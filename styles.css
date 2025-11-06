@@ -605,7 +605,6 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .card-image {
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #272b00;
 }
 
 .card-image img {
