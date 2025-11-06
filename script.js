@@ -18,15 +18,6 @@ function toggleMenu() {
     mobileMenu.classList.toggle('active');
     const isActive = mobileMenu.classList.contains('active');
     document.body.style.overflow = isActive ? 'hidden' : '';
-
-    // Add background to navbar when menu opens (home page only, initial state)
-    if (isActive) {
-        navbar.classList.add('menu-open');
-    } else {
-        navbar.classList.remove('menu-open');
-    }
-
-    // Logo stays visible in mobile menu - no need to hide it
 }
 
 hamburger.addEventListener('click', toggleMenu);
