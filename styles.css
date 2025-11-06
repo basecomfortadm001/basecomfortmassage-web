@@ -131,6 +131,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     transition: all 0.3s;
     position: relative;
     padding-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .nav-left a:hover {
