@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
     background: #f4f0e8;
-    color: #322f31;
+    color: #272b00;
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -26,8 +26,8 @@ h1, h2, h3 {
 
 /* Section 1: Reviews Bar */
 .reviews-bar {
-    background: #ebe3d5;
-    border-bottom: 1px solid #000;
+    background: #bec092;
+    border-bottom: 1px solid #272b00;
     padding: 6px 20px;
     position: fixed;
     top: 0;
@@ -58,7 +58,7 @@ h1, h2, h3 {
 }
 
 .stars {
-    color: #cc9369;
+    color: #54582f;
     font-size: 14px;
 }
 
@@ -79,7 +79,7 @@ h1, h2, h3 {
 
 .navbar.scrolled {
     background: #f4f0e8;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #272b00;
     top: 0;
 }
 
@@ -90,7 +90,7 @@ h1, h2, h3 {
 /* Add background to navbar when mobile menu is open (home page only, initial state) */
 body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     background: #f4f0e8;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #272b00;
 }
 
 .nav-content {
@@ -155,7 +155,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .navbar.scrolled .nav-left a {
-    color: #322f31;
+    color: #272b00;
 }
 
 .nav-center .logo {
@@ -183,21 +183,21 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-nav:hover {
-    background: #be936a;
+    background: #54582f;
     color: #fff;
-    border-color: #be936a;
+    border-color: #54582f;
     transform: rotate(-5deg);
 }
 
 .navbar.scrolled .btn-nav {
     border-color: #000;
-    color: #322f31;
+    color: #272b00;
 }
 
 .navbar.scrolled .btn-nav:hover {
-    background: #be936a;
+    background: #54582f;
     color: #fff;
-    border-color: #be936a;
+    border-color: #54582f;
 }
 
 /* Hamburger Menu */
@@ -234,11 +234,11 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .navbar.scrolled .hamburger-line {
-    background: #322f31;
+    background: #272b00;
 }
 
 .hamburger.active .hamburger-line {
-    background: #322f31;
+    background: #272b00;
 }
 
 .hamburger.active .hamburger-line:nth-child(1) {
@@ -289,7 +289,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     width: 80%;
     max-width: 400px;
     height: 100%;
-    background: #ebe3d5;
+    background: #bec092;
     padding-top: 15px;
     overflow-y: auto;
 }
@@ -352,7 +352,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     display: flex;
     align-items: center;
     padding: 15px 30px;
-    color: #322f31;
+    color: #272b00;
     text-decoration: none;
     font-size: 16px;
     font-family: 'Georgia', serif;
@@ -367,7 +367,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .mobile-menu-cta a {
-    background: #be936a;
+    background: #54582f;
     color: #fff;
     font-weight: bold;
     border: none;
@@ -380,7 +380,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .mobile-menu-cta a:hover {
-    background: #cc9369;
+    background: #86895d;
 }
 
 /* Section 3: Hero */
@@ -441,17 +441,17 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-hero:hover {
-    background: #be936a;
+    background: #54582f;
     border-style: solid;
-    border-color: #be936a;
+    border-color: #54582f;
     transform: rotate(-5deg);
 }
 
 /* Section 4: Scrolling Message */
 .scrolling-message {
-    background: #ebe3d5;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    background: #bec092;
+    border-top: 1px solid #272b00;
+    border-bottom: 1px solid #272b00;
     padding: 20px 0;
     overflow: hidden;
 }
@@ -490,7 +490,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 .btn-outlined {
     background: #f4f0e8;
-    border: 1px solid #000;
+    border: 1px solid #272b00;
     padding: 12px 40px;
     border-radius: 50px;
     font-size: 15px;
@@ -498,13 +498,13 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-family: 'Georgia', serif;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #322f31;
+    color: #272b00;
 }
 
 .btn-outlined:hover {
-    background: #be936a;
+    background: #54582f;
     color: #fff;
-    border-color: #be936a;
+    border-color: #54582f;
     transform: rotate(-5deg);
 }
 
@@ -568,8 +568,8 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-primary {
-    background: #be936a;
-    border: 1px solid #be936a;
+    background: #54582f;
+    border: 1px solid #54582f;
     color: #fff;
     padding: 15px 45px;
     border-radius: 50px;
@@ -581,8 +581,8 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-primary:hover {
-    background: #cc9369;
-    border-color: #cc9369;
+    background: #86895d;
+    border-color: #86895d;
     transform: rotate(-5deg);
 }
 
@@ -590,7 +590,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .about-location {
     background: #f4f0e8;
     padding: 100px 50px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 .info-card {
@@ -605,7 +605,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .card-image {
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #000;
+    border: 1px solid #272b00;
 }
 
 .card-image img {
@@ -648,7 +648,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .gift-card-section {
     background: #d4c4a8;
     padding: 100px 50px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 .promo-card {
@@ -684,16 +684,16 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 /* Section 8: Booking */
 .booking-section {
-    background: #ebe3d5;
+    background: #bec092;
     padding: 100px 50px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 /* Section 9: Opening Hours */
 .opening-hours {
     background: #f4f0e8;
     padding: 100px 50px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 .hours-card {
@@ -702,7 +702,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     height: 500px;
     background: url('assets/open.png') center/cover;
     border-radius: 250px 250px 0 0;
-    border: 1px solid #000;
+    border: 1px solid #272b00;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -745,7 +745,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     background: #f4f0e8;
     padding: 100px 50px;
     text-align: center;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 .section-title {
@@ -766,7 +766,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 20px;
-    border: 1px solid #000;
+    border: 1px solid #272b00;
 }
 
 .insta-photo img {
@@ -782,9 +782,9 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 /* Section 11: Footer */
 .footer {
-    background: #ebe3d5;
+    background: #bec092;
     padding: 80px 50px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #272b00;
 }
 
 .footer-content {
@@ -816,7 +816,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .newsletter-input {
     flex: 1;
     padding: 12px 20px;
-    border: 1px solid #000;
+    border: 1px solid #272b00;
     border-radius: 50px;
     font-size: 15px;
     background: transparent;
@@ -824,8 +824,8 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-newsletter {
-    background: #be936a;
-    border: 1px solid #be936a;
+    background: #54582f;
+    border: 1px solid #54582f;
     color: #fff;
     padding: 12px 30px;
     border-radius: 50px;
@@ -836,8 +836,8 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .btn-newsletter:hover {
-    background: #cc9369;
-    border-color: #cc9369;
+    background: #86895d;
+    border-color: #86895d;
 }
 
 .footer-columns {
@@ -859,7 +859,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 .footer-column a {
     display: block;
-    color: #322f31;
+    color: #272b00;
     text-decoration: none;
     font-size: 15px;
     margin-bottom: 10px;
@@ -894,7 +894,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .footer-legal a {
-    color: #322f31;
+    color: #272b00;
     text-decoration: none;
     font-size: 14px;
     font-family: 'Helvetica', sans-serif;
@@ -1092,7 +1092,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
         border-top: 1px solid rgba(0, 0, 0, 0.2);
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         margin-bottom: -1px;
-        background: #ebe3d5;
+        background: #bec092;
         overflow: hidden;
     }
 
@@ -1213,14 +1213,14 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #cc9369;
+    color: #86895d;
     margin-bottom: 15px;
 }
 
 .massages-archive-head .main-title {
     font-size: 48px;
     font-weight: 400;
-    color: #322f31;
+    color: #272b00;
     margin: 0;
 }
 
@@ -1268,7 +1268,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .massage-card .massage-title {
     font-size: 28px;
     font-weight: 400;
-    color: #322f31;
+    color: #272b00;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -1289,7 +1289,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 .massage-card .massage-description {
     font-size: 15px;
     line-height: 1.8;
-    color: #322f31;
+    color: #272b00;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -1324,46 +1324,46 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 /* Massages Page Specific - Dark Navbar from Start */
 body.massages-page .navbar {
     background: #f4f0e8;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #272b00;
 }
 
 body.massages-page .navbar.scrolled {
     background: #f4f0e8;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #272b00;
     top: 0;
 }
 
 body.massages-page .nav-left a {
-    color: #322f31;
+    color: #272b00;
 }
 
 body.massages-page .navbar.scrolled .nav-left a {
-    color: #322f31;
+    color: #272b00;
 }
 
 body.massages-page .btn-nav {
-    color: #322f31;
-    border-color: #322f31;
+    color: #272b00;
+    border-color: #272b00;
 }
 
 body.massages-page .btn-nav:hover {
-    background: #322f31;
+    background: #272b00;
     color: #fff;
 }
 
 body.massages-page .btn-primary {
-    background: #be936a;
-    border-color: #be936a;
+    background: #54582f;
+    border-color: #54582f;
     color: #fff;
 }
 
 body.massages-page .btn-primary:hover {
-    background: #cc9369;
-    border-color: #cc9369;
+    background: #86895d;
+    border-color: #86895d;
 }
 
 body.massages-page .hamburger-line {
-    background: #322f31;
+    background: #272b00;
 }
 
 /* Mobile menu positioning for massages page */
