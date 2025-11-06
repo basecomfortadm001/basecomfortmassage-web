@@ -510,11 +510,11 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
 .massages-list {
     background: #f4f0e8;
-    padding: 80px 50px;
+    padding: 80px 80px;
     border-radius: 30px;
     margin-top: -40px;
     text-align: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -530,15 +530,28 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     font-family: 'Georgia', 'Palatino', serif;
 }
 
-.massages-list .massage-item {
-    max-width: 800px;
+.massages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
+    max-width: 1200px;
     margin: 0 auto 60px;
+}
+
+.massages-list .massage-item {
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.massages-list .massage-item:last-of-type {
-    margin-bottom: 60px;
+.massages-list .btn-primary {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .massages-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 .massages-list .massage-title {
