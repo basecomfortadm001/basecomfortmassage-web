@@ -603,7 +603,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 }
 
 .card-image {
-    border-radius: 250px 250px 0 0;
+    border-radius: 10px;
     overflow: hidden;
     border: 1px solid #000;
 }
@@ -613,6 +613,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
     height: 500px;
     object-fit: cover;
     display: block;
+    aspect-ratio: 1 / 1;
 }
 
 .card-content h3 {
@@ -1184,6 +1185,7 @@ body:not(.massages-page) .navbar.menu-open:not(.scrolled) {
 
     .card-image img {
         height: 350px;
+        aspect-ratio: 1 / 1;
     }
 
     .promo-card .card-image img {
