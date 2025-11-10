@@ -1,3 +1,18 @@
+/* Custom Fonts */
+@font-face {
+    font-family: 'Xavier Ashleigh';
+    src: url('assets/XavierAshleighDemo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sandrani';
+    src: url('assets/SandraniDemo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -26,7 +41,7 @@ h1, h2, h3 {
 
 /* Section 1: Reviews Bar */
 .reviews-bar {
-    background: linear-gradient(135deg, #bec092 0%, #b0ba85 100%);
+    background: url('assets/colors_leaves.png') center/cover;
     border-bottom: 1px solid #272b00;
     padding: 6px 20px;
     position: fixed;
@@ -430,14 +445,12 @@ h1, h2, h3 {
 
 /* Section 5: Massages */
 .massages-section {
-    background: #86895d;
+    background: url('assets/leaves_bright.png') center/cover;
     padding-bottom: 80px;
 }
 
 .massages-intro {
-    background: #86895d;
-    background-image: radial-gradient(circle, rgba(39, 43, 0, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
+    background: transparent;
     padding: 120px 50px 160px;
     text-align: center;
     border-bottom: none;
@@ -475,11 +488,12 @@ h1, h2, h3 {
     background: #f4f0e8;
     background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
-    padding: 100px 80px;
+    padding: 60px 80px 80px;
     border-radius: 30px;
     margin-top: -40px;
     text-align: center;
-    max-width: 1400px;
+    max-width: calc(100% - 100px);
+    width: 1400px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -498,25 +512,72 @@ h1, h2, h3 {
 .massages-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px 100px;
+    gap: 60px 100px;
     max-width: 1200px;
     margin: 0 auto 60px;
 }
 
 .massages-list .massage-item {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     position: relative;
+    text-align: center;
 }
 
-.massages-list .massage-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(39, 43, 0, 0.2), transparent);
+/* Desktop: oval blurred background images behind each massage */
+@media (min-width: 981px) {
+    .massages-list .massage-item {
+        z-index: 1;
+    }
+
+    .massages-list .massage-title,
+    .massages-list .massage-description {
+        position: relative;
+        z-index: 2;
+    }
+
+    .massages-grid .massage-item::before {
+        content: '';
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 260px;
+        height: 210px;
+        border-radius: 50%;
+        z-index: 0;
+        opacity: 0.5;
+        filter: blur(12px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-size: cover;
+        background-position: center;
+        pointer-events: none;
+    }
+
+    /* Relaxation massage */
+    .massages-grid .massage-item:nth-child(1)::before {
+        background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80');
+    }
+
+    /* Sports massage */
+    .massages-grid .massage-item:nth-child(2)::before {
+        background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80');
+    }
+
+    /* Deep Tissue massage */
+    .massages-grid .massage-item:nth-child(3)::before {
+        background-image: url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80');
+    }
+
+    /* Head and neck massage */
+    .massages-grid .massage-item:nth-child(4)::before {
+        background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80');
+    }
+
+    .massages-grid .massage-item:hover::before {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 0.6;
+        filter: blur(0px);
+    }
 }
 
 .massages-list .btn-primary {
@@ -535,12 +596,42 @@ h1, h2, h3 {
     font-style: italic;
     margin-bottom: 15px;
     color: #272b00;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-block;
+}
+
+.massages-list .massage-title::after {
+    content: '⇲';
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 5px;
+    font-style: normal;
 }
 
 .massages-list .massage-description {
     font-size: 22px;
     font-family: 'Open Sans', sans-serif;
     color: #272b00;
+    margin-top: 15px;
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), font-weight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desktop: efecto zoom al hacer hover */
+@media (min-width: 981px) {
+    .massages-list .massage-item:hover .massage-title {
+        transform: scale(1.05);
+    }
+
+    .massages-list .massage-item:hover .massage-title::after {
+        opacity: 1;
+    }
+
+    .massages-list .massage-item:hover .massage-description {
+        transform: scale(1.05);
+        font-weight: 600;
+    }
 }
 
 .btn-primary {
@@ -567,7 +658,7 @@ h1, h2, h3 {
     background: #f4f0e8;
     background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
-    padding: 140px 50px;
+    padding: 80px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -641,7 +732,7 @@ h1, h2, h3 {
 /* Section 7: Gift Card */
 .gift-card-section {
     background: linear-gradient(135deg, #d4c4a8 0%, #c8bc9e 100%);
-    padding: 140px 50px;
+    padding: 80px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -678,9 +769,32 @@ h1, h2, h3 {
 
 /* Section 8: Booking */
 .booking-section {
-    background: linear-gradient(135deg, #bec092 0%, #b0ba85 100%);
-    padding: 140px 50px;
+    position: relative;
+    padding: 80px 50px;
     border-top: 1px solid #272b00;
+    overflow: hidden;
+}
+
+.booking-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/colors_vertex.png') bottom right/cover;
+    z-index: -1;
+}
+
+@media (max-width: 980px) {
+    .booking-section::before {
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: url('assets/colors_river.png') center/cover;
+        transform: translate(-50%, -50%) rotate(210deg);
+    }
 }
 
 /* Section 9: Opening Hours */
@@ -688,7 +802,7 @@ h1, h2, h3 {
     background: #f4f0e8;
     background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
-    padding: 140px 50px;
+    padding: 80px 50px;
     border-top: 1px solid #272b00;
 }
 
@@ -741,7 +855,7 @@ h1, h2, h3 {
     background: #f4f0e8;
     background-image: radial-gradient(circle, rgba(39, 43, 0, 0.02) 1px, transparent 1px);
     background-size: 30px 30px;
-    padding: 140px 50px;
+    padding: 80px 50px;
     text-align: center;
     border-top: 1px solid #272b00;
 }
@@ -798,7 +912,7 @@ h1, h2, h3 {
 
 /* Section 11: Footer */
 .footer {
-    background: linear-gradient(135deg, #bec092 0%, #a8b37e 100%);
+    background: url('assets/leaves_bright_yellow.png') center/cover;
     padding: 100px 50px;
     border-top: 1px solid #272b00;
 }
@@ -1050,6 +1164,10 @@ h1, h2, h3 {
     .gift-card-section, .booking-section, .opening-hours,
     .social-section, .footer {
         padding: 60px 20px;
+    }
+
+    .massages-list {
+        max-width: calc(100% - 40px);
     }
 
     .massages-list .massage-title {
