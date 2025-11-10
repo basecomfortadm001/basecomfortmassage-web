@@ -8,177 +8,198 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'base-cream': '#F5EBDD',
+                        'base-tan': '#E1BFA1',
+                        'base-gold': '#C89C6C',
+                        'base-gray': '#D8D2C2',
+                        'base-olive': '#A2A37E',
+                        'base-text': '#5a5a4a',
+                    },
+                    fontFamily: {
+                        'serif': ['Georgia', 'Palatino', 'serif'],
+                        'sans': ['Open Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="custom.css">
 </head>
-<body class="massages-page">
+<body class="massages-page font-serif bg-base-cream text-base-text leading-relaxed overflow-x-hidden min-h-screen">
     <!-- Section 1: Reviews Bar -->
-    <div class="reviews-bar" id="reviewsBar">
-        <div class="reviews-content">
-            <div class="review-item desktop-only">Location in Utrecht</div>
-            <div class="review-item desktop-only">Licensed masseur</div>
-            <div class="review-item">
-                <span class="stars">★★★★★</span>
-                <span class="review-count">150+ reviews</span>
+    <div class="reviews-bar fixed top-0 left-0 right-0 z-[1000] bg-base-gray border-b border-base-gold py-1.5 px-5 transition-transform duration-300" id="reviewsBar">
+        <div class="flex justify-center items-center gap-12 max-w-7xl mx-auto">
+            <div class="desktop-only hidden md:flex text-sm items-center gap-2">Location in Utrecht</div>
+            <div class="desktop-only hidden md:flex text-sm items-center gap-2">Licensed masseur</div>
+            <div class="flex text-sm items-center gap-2">
+                <span class="text-base-gold text-sm">★★★★★</span>
+                <span>150+ reviews</span>
             </div>
         </div>
     </div>
 
     <!-- Section 2: Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-content">
-            <div class="nav-left">
-                <button class="hamburger" id="hamburger">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
+    <nav class="navbar fixed top-[45px] left-0 right-0 z-[1001] py-1.5 px-12 transition-all duration-300" id="navbar">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex gap-7 items-center flex-1">
+                <button class="hamburger hidden flex-col justify-between w-7 h-[18px] bg-transparent border-0 cursor-pointer p-0 z-[1002] relative" id="hamburger">
+                    <span class="hamburger-line w-full h-0.5 bg-base-tan transition-all duration-300"></span>
+                    <span class="hamburger-line w-full h-0.5 bg-base-tan transition-all duration-300"></span>
                 </button>
-                <a href="massages.html" class="desktop-nav active">Massages</a>
-                <a href="index.html#gift" class="desktop-nav">Gift cards</a>
-                <a href="index.html#about" class="desktop-nav">About us</a>
-                <a href="#contact" class="desktop-nav">Chat via WhatsApp</a>
+                <a href="massages.html" class="desktop-nav active hidden md:block text-base-tan no-underline text-sm transition-all duration-300 relative pb-1.5 font-sans hover:opacity-70">Massages</a>
+                <a href="index.html#gift" class="desktop-nav hidden md:block text-base-tan no-underline text-sm transition-all duration-300 relative pb-1.5 font-sans hover:opacity-70">Gift cards</a>
+                <a href="index.html#about" class="desktop-nav hidden md:block text-base-tan no-underline text-sm transition-all duration-300 relative pb-1.5 font-sans hover:opacity-70">About us</a>
+                <a href="#contact" class="desktop-nav hidden md:block text-base-tan no-underline text-sm transition-all duration-300 relative pb-1.5 font-sans hover:opacity-70">Chat via WhatsApp</a>
             </div>
-            <div class="nav-center">
+            <div class="flex justify-center flex-1">
                 <a href="index.html">
-                    <img src="assets/icon_base_gpt.png" alt="Base Comfort" class="logo" id="logoImg">
+                    <img src="assets/icon_base_gpt.png" alt="Base Comfort" class="logo h-[70px] w-auto transition-opacity duration-300 object-contain bg-transparent mix-blend-multiply block align-middle" id="logoImg">
                 </a>
             </div>
-            <div class="nav-right">
-                <button class="btn-nav desktop-nav">Contact</button>
-                <button class="btn-nav btn-primary">Book Now</button>
+            <div class="flex gap-7 items-center flex-1 justify-end">
+                <button class="btn-nav desktop-nav hidden md:block bg-transparent border border-base-tan text-base-tan py-3 px-7 rounded-full cursor-pointer text-sm italic font-serif transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-olive hover:text-white hover:border-base-olive hover:-rotate-[5deg]">Contact</button>
+                <button class="btn-primary bg-base-olive border border-base-olive text-white py-3 px-11 rounded-full text-sm italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book Now</button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-overlay" id="menuOverlay"></div>
-        <div class="mobile-menu-content">
-            <ul class="mobile-menu-list">
-                <li class="mobile-menu-item"><a href="massages.html" class="active">Massages</a></li>
-                <li class="mobile-menu-item"><a href="index.html#gift">Gift cards</a></li>
-                <li class="mobile-menu-item"><a href="index.html#about">About us</a></li>
-                <li class="mobile-menu-item"><a href="#contact">Chat via WhatsApp</a></li>
-                <li class="mobile-menu-item"><a href="#contact">Contact</a></li>
-                <li class="mobile-menu-item mobile-menu-cta"><a href="#book">Book Now</a></li>
+    <div class="mobile-menu fixed inset-0 z-[999] pointer-events-none opacity-0 transition-opacity duration-300" id="mobileMenu">
+        <div class="mobile-menu-overlay absolute inset-0 bg-black/50" id="menuOverlay"></div>
+        <div class="mobile-menu-content absolute top-0 right-0 w-4/5 max-w-sm h-full bg-base-cream transform translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto">
+            <ul class="mobile-menu-list pt-24 pb-8">
+                <li class="mobile-menu-item border-b border-base-gold/20"><a href="massages.html" class="active block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Massages</a></li>
+                <li class="mobile-menu-item border-b border-base-gold/20"><a href="index.html#gift" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Gift cards</a></li>
+                <li class="mobile-menu-item border-b border-base-gold/20"><a href="index.html#about" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">About us</a></li>
+                <li class="mobile-menu-item border-b border-base-gold/20"><a href="#contact" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Chat via WhatsApp</a></li>
+                <li class="mobile-menu-item border-b border-base-gold/20"><a href="#contact" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Contact</a></li>
+                <li class="mobile-menu-item mobile-menu-cta"><a href="#book" class="block mt-8 mx-8 py-4 text-center bg-base-olive text-white no-underline text-lg font-bold rounded-full transition-colors duration-300 hover:bg-base-gold">Book Now</a></li>
             </ul>
         </div>
     </div>
 
     <!-- Massages Section -->
-    <section class="massages-archive">
-        <div class="massages-archive-head">
-            <p class="subtitle">What we do best</p>
-            <h1 class="main-title">Find your massage</h1>
+    <section class="massages-archive pt-[180px] pb-20 px-12 bg-base-cream">
+        <div class="massages-archive-head text-center mb-20">
+            <p class="subtitle text-sm tracking-[0.2em] uppercase mb-5 font-sans">What we do best</p>
+            <h1 class="main-title text-6xl md:text-8xl italic font-normal">Find your massage</h1>
         </div>
 
-        <div class="massages-grid">
+        <div class="massages-grid max-w-7xl mx-auto grid grid-cols-1 gap-20">
             <!-- Massage Card 1: Relaxation Massage -->
-            <div class="massage-card">
+            <div class="massage-card grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div class="massage-image">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Relaxation massage">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Relaxation massage" class="w-full h-auto rounded-3xl">
                 </div>
                 <div class="massage-content">
-                    <h2 class="massage-title">Relaxation massage</h2>
-                    <p class="massage-description">Are you busy and in need of some me-time? Come visit us for a relaxing massage.<br><br>How we feel directly affects our bodies. High levels of stress not only lead to a full mind, but can also lead to headaches, tense muscles, and overall discomfort.<br><br>Our relaxation massage is designed for anyone experiencing stress, but you are also welcome if you don't have any symptoms and simply know you deserve this moment of bliss.</p>
+                    <h2 class="massage-title text-5xl italic mb-8 text-base-text">Relaxation massage</h2>
+                    <p class="massage-description text-lg font-sans leading-relaxed">Are you busy and in need of some me-time? Come visit us for a relaxing massage.<br><br>How we feel directly affects our bodies. High levels of stress not only lead to a full mind, but can also lead to headaches, tense muscles, and overall discomfort.<br><br>Our relaxation massage is designed for anyone experiencing stress, but you are also welcome if you don't have any symptoms and simply know you deserve this moment of bliss.</p>
                 </div>
             </div>
 
             <!-- Massage Card 2: Sports Massage -->
-            <div class="massage-card">
-                <div class="massage-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Sports massage">
+            <div class="massage-card grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="massage-image md:order-2">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Sports massage" class="w-full h-auto rounded-3xl">
                 </div>
-                <div class="massage-content">
-                    <h2 class="massage-title">Sports massage</h2>
-                    <p class="massage-description">Our sports massage is specifically designed for people who work out frequently and focuses on improving their athletic performance, speeding up muscle recovery after a workout, and restoring and preventing injuries.<br><br>It's a firm and stimulating massage. Using techniques like compression, friction, stretching, and deep massage, the underlying tissue is loosened and knots are released from the muscles.</p>
+                <div class="massage-content md:order-1">
+                    <h2 class="massage-title text-5xl italic mb-8 text-base-text">Sports massage</h2>
+                    <p class="massage-description text-lg font-sans leading-relaxed">Our sports massage is specifically designed for people who work out frequently and focuses on improving their athletic performance, speeding up muscle recovery after a workout, and restoring and preventing injuries.<br><br>It's a firm and stimulating massage. Using techniques like compression, friction, stretching, and deep massage, the underlying tissue is loosened and knots are released from the muscles.</p>
                 </div>
             </div>
 
             <!-- Massage Card 3: Deep Tissue Massage -->
-            <div class="massage-card">
+            <div class="massage-card grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div class="massage-image">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" alt="Deep Tissue Massage">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" alt="Deep Tissue Massage" class="w-full h-auto rounded-3xl">
                 </div>
                 <div class="massage-content">
-                    <h2 class="massage-title">Deep Tissue Massage</h2>
-                    <p class="massage-description">Do you suffer from (chronic) pain or tension in your body or head? Then a deep tissue massage might be something for you. Deep tissue massage is a firm and intensive massage, similar to sports massage, but it focuses more on treating the entire body and addressing chronic pain, tension, and stiffness in the deeper layers of muscles and fascia.<br><br>Deep tissue massage focuses on treating deep tension, regardless of the cause. Using slow, focused, and firm pressure, deeper muscles and fascia are massaged, which can help release toxins and knots and reduce chronic pain. The massage focuses on the entire body, but specific areas can receive more attention in consultation with you.</p>
+                    <h2 class="massage-title text-5xl italic mb-8 text-base-text">Deep Tissue Massage</h2>
+                    <p class="massage-description text-lg font-sans leading-relaxed">Do you suffer from (chronic) pain or tension in your body or head? Then a deep tissue massage might be something for you. Deep tissue massage is a firm and intensive massage, similar to sports massage, but it focuses more on treating the entire body and addressing chronic pain, tension, and stiffness in the deeper layers of muscles and fascia.<br><br>Deep tissue massage focuses on treating deep tension, regardless of the cause. Using slow, focused, and firm pressure, deeper muscles and fascia are massaged, which can help release toxins and knots and reduce chronic pain. The massage focuses on the entire body, but specific areas can receive more attention in consultation with you.</p>
                 </div>
             </div>
 
             <!-- Massage Card 4: Head and Neck Massage -->
-            <div class="massage-card">
-                <div class="massage-image">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Head and neck massage">
+            <div class="massage-card grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="massage-image md:order-2">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Head and neck massage" class="w-full h-auto rounded-3xl">
                 </div>
-                <div class="massage-content">
-                    <h2 class="massage-title">Head- and neckmassage</h2>
-                    <p class="massage-description">Many people suffer from headaches or (early) repetitive strain injuries due to poor posture. Do you spend a lot of time at the office or at the computer? Do you suffer from tension in your neck, shoulders, or head? Then come in for a head and neck massage.<br><br>This treatment focuses on your upper body and relieves tension in this area. We work with pressure points, starting with the upper back, arms, and shoulders, and gradually working our way up to the neck and head.</p>
+                <div class="massage-content md:order-1">
+                    <h2 class="massage-title text-5xl italic mb-8 text-base-text">Head- and neckmassage</h2>
+                    <p class="massage-description text-lg font-sans leading-relaxed">Many people suffer from headaches or (early) repetitive strain injuries due to poor posture. Do you spend a lot of time at the office or at the computer? Do you suffer from tension in your neck, shoulders, or head? Then come in for a head and neck massage.<br><br>This treatment focuses on your upper body and relieves tension in this area. We work with pressure points, starting with the upper back, arms, and shoulders, and gradually working our way up to the neck and head.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section: Opening Hours -->
-    <section class="opening-hours">
-        <div class="hours-card">
-            <p class="hours-subtitle">MON – SUN</p>
-            <h2 class="hours-title">Open from Monday to Sunday</h2>
-            <button class="btn-primary">Book your Massage</button>
+    <section class="opening-hours bg-base-tan py-20 px-12 border-t border-base-gold">
+        <div class="hours-card max-w-5xl mx-auto h-[500px] bg-cover bg-center rounded-t-[250px] border border-base-gold flex flex-col items-center justify-center text-center text-white p-20" style="background-image: url('assets/open.png');">
+            <p class="hours-subtitle text-sm tracking-widest mb-5">MON – SUN</p>
+            <h2 class="hours-title text-6xl italic mb-10">Open from Monday to Sunday</h2>
+            <button class="btn-primary bg-base-olive border border-base-olive text-white py-4 px-11 rounded-full text-sm italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book your Massage</button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
+    <footer class="footer bg-base-gold py-24 px-12 border-t border-base-olive text-white">
+        <div class="footer-content max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-20">
             <div class="footer-main">
-                <div class="footer-logo">Base Comfort</div>
-                <p class="footer-contact">info@basecomfort.nl</p>
-                <p class="footer-contact">+31 30 123 4567</p>
-                <div class="newsletter">
-                    <input type="email" placeholder="Your email" class="newsletter-input">
-                    <button class="btn-newsletter">Subscribe</button>
+                <div class="footer-logo text-4xl italic mb-5">Base Comfort</div>
+                <p class="footer-contact text-sm mb-2.5 font-sans">info@basecomfort.nl</p>
+                <p class="footer-contact text-sm mb-2.5 font-sans">+31 30 123 4567</p>
+                <div class="newsletter mt-7 flex gap-2.5">
+                    <input type="email" placeholder="Your email" class="newsletter-input flex-1 py-3 px-5 border border-white rounded-full text-sm bg-transparent font-sans text-white placeholder:text-white/70">
+                    <button class="btn-newsletter bg-base-olive border border-base-olive text-white py-3 px-7 rounded-full text-sm font-serif cursor-pointer transition-all duration-300 hover:bg-base-gold hover:border-base-gold">Subscribe</button>
                 </div>
             </div>
 
-            <div class="footer-columns">
+            <div class="footer-columns grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header">
+                    <h4 class="footer-accordion-header text-lg mb-5 cursor-pointer md:cursor-default flex justify-between items-center">
                         Location
-                        <span class="footer-accordion-icon">+</span>
+                        <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
-                    <div class="footer-accordion-content">
-                        <p>Oudegracht 123<br>3511 AB Utrecht<br>The Netherlands</p>
+                    <div class="footer-accordion-content md:block">
+                        <p class="text-sm leading-relaxed font-sans">Oudegracht 123<br>3511 AB Utrecht<br>The Netherlands</p>
                     </div>
                 </div>
 
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header">
+                    <h4 class="footer-accordion-header text-lg mb-5 cursor-pointer md:cursor-default flex justify-between items-center">
                         Info
-                        <span class="footer-accordion-icon">+</span>
+                        <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
-                    <div class="footer-accordion-content">
-                        <a href="#contact">Contact</a>
-                        <a href="#terms">Terms & Conditions</a>
+                    <div class="footer-accordion-content md:block">
+                        <a href="#contact" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Contact</a>
+                        <a href="#terms" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
                     </div>
                 </div>
 
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header">
+                    <h4 class="footer-accordion-header text-lg mb-5 cursor-pointer md:cursor-default flex justify-between items-center">
                         Follow us
-                        <span class="footer-accordion-icon">+</span>
+                        <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
-                    <div class="footer-accordion-content">
-                        <a href="#facebook">Facebook</a>
-                        <a href="#instagram">Instagram</a>
+                    <div class="footer-accordion-content md:block">
+                        <a href="#facebook" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Facebook</a>
+                        <a href="#instagram" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p class="copyright">All rights reserved - Base Comfort 2025</p>
-            <div class="footer-legal">
-                <a href="#privacy">Privacy policy</a>
-                <a href="#terms">Terms & Conditions</a>
+        <div class="footer-bottom border-t border-black/20 pt-5 mt-7 text-center">
+            <p class="copyright text-sm m-0 mb-2 font-sans">All rights reserved - Base Comfort 2025</p>
+            <div class="footer-legal flex justify-center gap-4 m-0 p-0">
+                <a href="#privacy" class="text-white no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Privacy policy</a>
+                <a href="#terms" class="text-white no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
             </div>
         </div>
     </footer>

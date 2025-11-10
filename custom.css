@@ -1,0 +1,114 @@
+/* Custom CSS for effects that Tailwind doesn't cover */
+
+/* Reviews Bar - Hidden state */
+.reviews-bar.hidden {
+    transform: translateY(-100%);
+}
+
+/* Navbar - Scrolled state */
+.navbar.scrolled {
+    background: #F5EBDD;
+    border-bottom: 1px solid #C89C6C;
+    top: 0;
+}
+
+.navbar.scrolled .desktop-nav {
+    color: #5a5a4a;
+    font-weight: 600;
+}
+
+.navbar.scrolled .btn-nav {
+    border-color: #C89C6C;
+    color: #5a5a4a;
+}
+
+.navbar.scrolled .btn-nav:hover {
+    background: #A2A37E;
+    color: #fff;
+    border-color: #A2A37E;
+}
+
+.navbar.scrolled .hamburger-line {
+    background: #A2A37E;
+}
+
+/* Navbar - Hidden state */
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+/* Hamburger active state */
+.hamburger.active .hamburger-line:first-child {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active .hamburger-line:last-child {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile Menu active state */
+.mobile-menu.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.mobile-menu.active .mobile-menu-content {
+    transform: translateX(0);
+}
+
+/* Desktop Nav - Active indicator */
+.nav-left a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+/* Massage items - Desktop styles */
+@media (min-width: 768px) {
+    .massages-grid .massage-item {
+        z-index: 1;
+    }
+
+    .massages-list .massage-title,
+    .massages-list .massage-description {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* Footer accordion - Mobile only */
+@media (max-width: 767px) {
+    .footer-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .footer-accordion.active .footer-accordion-content {
+        max-height: 500px;
+    }
+
+    .footer-accordion.active .footer-accordion-icon {
+        transform: rotate(45deg);
+    }
+
+    .footer-accordion-icon {
+        transition: transform 0.3s ease;
+    }
+}
+
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex !important;
+    }
+
+    .massages-list {
+        max-width: calc(100% - 40px) !important;
+    }
+}

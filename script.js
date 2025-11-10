@@ -211,3 +211,82 @@ document.querySelectorAll('.footer-accordion-header').forEach(header => {
         }
     });
 });
+
+// Instagram Carousel functionality
+const carouselTrack = document.querySelector('.instagram-track');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+const indicators = document.querySelectorAll('.indicator');
+let currentSlide = 0;
+const totalSlides = 2;
+
+// Touch/swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+function updateCarousel() {
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+            indicator.style.opacity = '1';
+        } else {
+            indicator.style.opacity = '0.5';
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+// Button navigation
+if (nextBtn) {
+    nextBtn.addEventListener('click', nextSlide);
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+}
+
+// Indicator navigation
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+    });
+});
+
+// Touch/swipe navigation
+const carouselContainer = document.querySelector('.instagram-carousel');
+if (carouselContainer) {
+    carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left - next slide
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + 50) {
+            // Swipe right - previous slide
+            prevSlide();
+        }
+    }
+}
+
+// Initialize carousel
+updateCarousel();
