@@ -7,7 +7,7 @@
 
 /* Navbar - Scrolled state */
 .navbar.scrolled {
-    background: #F5EBDD;
+    background: #F4F0E8 !important;
     border-bottom: 1px solid #C89C6C;
     top: 0;
 }
@@ -315,5 +315,129 @@
 @media (min-width: 1536px) {
     .gift-frame-wrapper {
         padding: 15%;
+    }
+}
+
+/* ============================================
+   MOBILE TYPOGRAPHY & SPACING IMPROVEMENTS
+   Based on massagehuys.nl patterns
+   ============================================ */
+
+@media (max-width: 767px) {
+    /* Show massage descriptions on mobile */
+    .massage-description {
+        display: block !important;
+        font-size: 0.875rem !important; /* 14px */
+        line-height: 1.6 !important;
+        margin-top: 0.75rem !important;
+        opacity: 0.9 !important;
+    }
+
+    /* Tighter massage grid spacing */
+    .massages-grid {
+        gap: 3.125rem !important; /* 50px instead of 80px */
+    }
+
+    /* Button consistency - 50px height target */
+    .btn-primary,
+    .btn-outlined,
+    .btn-nav {
+        min-height: 46px !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    /* Hero button specific */
+    .btn-hero {
+        min-height: 50px !important;
+        font-weight: 600 !important;
+    }
+
+    /* Typography letter-spacing for headings */
+    h1, h2, h3, .section-title, .section-title-small,
+    .massage-title, .hours-title {
+        letter-spacing: -0.03em !important;
+    }
+
+    /* Container side padding reduction */
+    .massages-section .massages-intro,
+    .about-location,
+    .booking-section,
+    .opening-hours,
+    .social-section,
+    .footer {
+        padding-left: 1.25rem !important; /* 20px */
+        padding-right: 1.25rem !important; /* 20px */
+    }
+
+    /* Navbar specific padding */
+    .navbar {
+        padding-left: 1.25rem !important; /* 20px */
+        padding-right: 1.25rem !important; /* 20px */
+    }
+
+    /* Hero content max-width for readability */
+    .hero-content {
+        max-width: calc(100vw - 40px) !important;
+    }
+
+    /* Image container heights matching massagehuys */
+    .about-location .card-image > div,
+    .info-card .card-image > div {
+        height: 310px !important;
+    }
+
+    /* Tighter vertical rhythm in cards */
+    .card-content h3 {
+        margin-bottom: 1.875rem !important; /* 30px */
+    }
+
+    /* Section vertical spacing adjustments */
+    .about-location {
+        padding-top: 5.3125rem !important; /* 85px */
+        padding-bottom: 5.3125rem !important; /* 85px */
+    }
+
+    .booking-section {
+        padding-top: 5.3125rem !important; /* 85px */
+        padding-bottom: 5.3125rem !important; /* 85px */
+    }
+
+    .opening-hours {
+        padding-top: 5.3125rem !important; /* 85px */
+        padding-bottom: 5.3125rem !important; /* 85px */
+    }
+
+    .social-section {
+        padding-top: 5.3125rem !important; /* 85px */
+        padding-bottom: 5.3125rem !important; /* 85px */
+    }
+
+    /* Footer tighter spacing */
+    .footer {
+        padding-top: 3.75rem !important; /* 60px */
+        padding-bottom: 3.75rem !important; /* 60px */
+    }
+
+    /* Newsletter input height match */
+    .newsletter-input {
+        height: 50px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .btn-newsletter {
+        height: 50px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Instagram carousel - single row on mobile */
+    .instagram-carousel .insta-slide {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .instagram-carousel .insta-photo:nth-child(n+4) {
+        display: none !important;
     }
 }
