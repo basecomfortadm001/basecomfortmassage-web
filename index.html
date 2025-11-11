@@ -64,15 +64,15 @@
             </div>
             <div class="flex gap-7 items-center flex-1 justify-end">
                 <button class="btn-nav desktop-nav hidden md:block bg-transparent border border-base-tan text-base-tan py-3 px-7 rounded-full cursor-pointer text-sm italic font-serif transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-olive hover:text-white hover:border-base-olive hover:-rotate-[5deg]">Contact</button>
-                <button class="btn-primary bg-base-olive border border-base-olive text-white py-3 px-11 rounded-full text-sm italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book Now</button>
+                <button class="btn-primary bg-base-olive border border-base-olive text-white py-3 px-7 rounded-full text-sm italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book Now</button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed inset-0 z-[999] pointer-events-none opacity-0 transition-opacity duration-300" id="mobileMenu">
+    <div class="mobile-menu fixed inset-0 z-[999] pointer-events-none opacity-0 transition-opacity duration-500" id="mobileMenu">
         <div class="mobile-menu-overlay absolute inset-0 bg-black/50" id="menuOverlay"></div>
-        <div class="mobile-menu-content absolute top-0 right-0 w-4/5 max-w-sm h-full bg-base-cream transform translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto">
+        <div class="mobile-menu-content absolute top-0 left-0 w-4/5 max-w-sm h-full bg-base-cream transform -translate-x-full transition-transform duration-500 ease-in-out shadow-2xl overflow-y-auto">
             <ul class="mobile-menu-list pt-24 pb-8">
                 <li class="mobile-menu-item border-b border-base-gold/20"><a href="massages.html" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Massages</a></li>
                 <li class="mobile-menu-item border-b border-base-gold/20"><a href="#gift" class="block py-5 px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Gift cards</a></li>
@@ -95,16 +95,16 @@
     </section>
 
     <!-- Section 4: Transition Message -->
-    <section class="transition-message bg-base-gray py-5 px-12 border-t border-b border-base-gold">
+    <!-- <section class="transition-message bg-base-gray py-5 px-12 border-t border-b border-base-gold">
         <div class="max-w-4xl mx-auto flex items-center justify-center">
             <h2 class="text-xl md:text-3xl italic text-base-text text-center leading-tight">Your Balance is our base</h2>
         </div>
-    </section>
+    </section> -->
 
     <!-- Section 5: Massages -->
     <section class="massages-section pb-20 bg-cover bg-center" id="massages" style="background-image: url('assets/art_3.png');">
         <!-- Introduction -->
-        <div class="massages-intro bg-transparent py-[80px] px-12 pb-32 text-center border-b-0">
+        <div class="massages-intro bg-transparent pt-[60px] pb-32 px-12 text-center border-b-0">
             <p class="intro-text max-w-3xl mx-auto mb-10 text-xl leading-relaxed font-sans">Breathe in, chill out. Go slow, say no. Switch off, drift away. Be here. Take your time. Touch base, stay true. Come home. Be you.</p>
             <button class="btn-outlined bg-base-cream border border-base-gold py-3 px-7 rounded-full cursor-pointer text-sm italic font-serif transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-base-text hover:bg-base-olive hover:text-white hover:border-base-olive hover:-rotate-[5deg]">About Us</button>
         </div>
@@ -251,21 +251,23 @@
     </section>
 
     <!-- Section 11: Footer -->
-    <footer class="footer bg-base-gold py-24 px-12 border-t border-base-olive text-white">
+    <footer class="footer bg-base-gray py-16 px-12 border-t border-base-gold text-base-text">
         <div class="footer-content max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-20">
             <div class="footer-main">
-                <div class="footer-logo text-4xl italic mb-5">Base Comfort</div>
+                <div class="footer-logo mb-5">
+                    <img src="assets/icon_base_gpt.png" alt="Base Comfort" class="h-20 w-auto">
+                </div>
                 <p class="footer-contact text-sm mb-2.5 font-sans">info@basecomfort.nl</p>
                 <p class="footer-contact text-sm mb-2.5 font-sans">+31 30 123 4567</p>
                 <div class="newsletter mt-7 flex gap-2.5">
-                    <input type="email" placeholder="Your email" class="newsletter-input flex-1 py-3 px-5 border border-white rounded-full text-sm bg-transparent font-sans text-white placeholder:text-white/70">
+                    <input type="email" placeholder="Your email" class="newsletter-input flex-1 py-3 px-5 border border-base-text rounded-full text-sm bg-transparent font-sans text-base-text placeholder:text-base-text/70">
                     <button class="btn-newsletter bg-base-olive border border-base-olive text-white py-3 px-7 rounded-full text-sm font-serif cursor-pointer transition-all duration-300 hover:bg-base-gold hover:border-base-gold">Subscribe</button>
                 </div>
             </div>
 
-            <div class="footer-columns grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="footer-columns grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header text-lg mb-3 cursor-pointer md:cursor-default flex justify-between items-center">
+                    <h4 class="footer-accordion-header text-lg mb-2 cursor-pointer md:cursor-default flex justify-between items-center">
                         Location
                         <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
@@ -275,34 +277,34 @@
                 </div>
 
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header text-lg mb-3 cursor-pointer md:cursor-default flex justify-between items-center">
+                    <h4 class="footer-accordion-header text-lg mb-2 cursor-pointer md:cursor-default flex justify-between items-center">
                         Info
                         <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
                     <div class="footer-accordion-content md:block">
-                        <a href="#contact" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Contact</a>
-                        <a href="#terms" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
+                        <a href="#contact" class="block text-base-text no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Contact</a>
+                        <a href="#terms" class="block text-base-text no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
                     </div>
                 </div>
 
                 <div class="footer-column footer-accordion">
-                    <h4 class="footer-accordion-header text-lg mb-3 cursor-pointer md:cursor-default flex justify-between items-center">
+                    <h4 class="footer-accordion-header text-lg mb-2 cursor-pointer md:cursor-default flex justify-between items-center">
                         Follow us
                         <span class="footer-accordion-icon md:hidden">+</span>
                     </h4>
                     <div class="footer-accordion-content md:block">
-                        <a href="#facebook" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Facebook</a>
-                        <a href="#instagram" class="block text-white no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Instagram</a>
+                        <a href="#facebook" class="block text-base-text no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Facebook</a>
+                        <a href="#instagram" class="block text-base-text no-underline text-sm mb-2.5 font-sans transition-opacity duration-300 hover:opacity-60">Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer-bottom border-t border-black/20 pt-5 mt-7 text-center">
+        <div class="footer-bottom border-t border-base-text/20 pt-5 mt-7 text-center">
             <p class="copyright text-sm m-0 mb-2 font-sans">All rights reserved - Base Comfort 2025</p>
             <div class="footer-legal flex justify-center gap-4 m-0 p-0">
-                <a href="#privacy" class="text-white no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Privacy policy</a>
-                <a href="#terms" class="text-white no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
+                <a href="#privacy" class="text-base-text no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Privacy policy</a>
+                <a href="#terms" class="text-base-text no-underline text-sm font-sans transition-opacity duration-300 hover:opacity-60">Terms & Conditions</a>
             </div>
         </div>
     </footer>

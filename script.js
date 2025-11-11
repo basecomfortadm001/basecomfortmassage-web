@@ -46,11 +46,9 @@ function toggleMenu() {
         // Update menu position based on scroll state
         updateMenuPosition();
 
-        // Lock body scroll
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollPosition}px`;
-        document.body.style.width = '100%';
+        // Lock body scroll using modern approach
         document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
 
         // Keep navbar and reviews bar states frozen
         if (scrollPosition > 10) {
@@ -62,17 +60,9 @@ function toggleMenu() {
         menuOverlay.addEventListener('touchmove', preventScroll, { passive: false });
         menuOverlay.addEventListener('wheel', preventScroll, { passive: false });
     } else {
-        // Remove frozen states but preserve current scroll state
-        const currentScrollBeforeRestore = scrollPosition;
-
         // Restore body scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
         document.body.style.overflow = '';
-
-        // Restore scroll position without triggering scroll events
-        window.scrollTo(0, currentScrollBeforeRestore);
+        document.body.style.touchAction = '';
 
         // Remove frozen classes
         reviewsBar.classList.remove('frozen');

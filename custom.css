@@ -28,8 +28,13 @@
     border-color: #A2A37E;
 }
 
+/* Hamburger lines - consistent weight */
+.hamburger-line {
+    height: 3px !important;
+}
+
 .navbar.scrolled .hamburger-line {
-    background: #A2A37E;
+    background: #A2A37E !important;
 }
 
 /* Navbar - Hidden state */
@@ -39,11 +44,11 @@
 
 /* Hamburger active state */
 .hamburger.active .hamburger-line:first-child {
-    transform: rotate(45deg) translateY(8px);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active .hamburger-line:last-child {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Mobile Menu active state */
@@ -54,6 +59,11 @@
 
 .mobile-menu.active .mobile-menu-content {
     transform: translateX(0);
+}
+
+/* Mobile Menu scrolled state - adjust top padding */
+.mobile-menu.scrolled .mobile-menu-list {
+    padding-top: 80px;
 }
 
 /* Desktop Nav - Active indicator */
@@ -91,7 +101,7 @@
     }
 
     .footer-accordion.active .footer-accordion-content {
-        max-height: 500px;
+        max-height: 300px;
     }
 
     .footer-accordion.active .footer-accordion-icon {
@@ -100,6 +110,30 @@
 
     .footer-accordion-icon {
         transition: transform 0.3s ease;
+    }
+
+    /* Adjust spacing for footer accordions on mobile */
+    .footer-content {
+        gap: 2rem !important;
+    }
+
+    .footer-columns {
+        gap: 0rem !important;
+        row-gap: 0.5rem !important;
+    }
+
+    .footer-accordion {
+        margin-bottom: 0 !important;
+    }
+
+    .footer-accordion-header {
+        margin-bottom: 0.25rem !important;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-accordion.active .footer-accordion-content {
+        padding-bottom: 0.75rem;
     }
 }
 
