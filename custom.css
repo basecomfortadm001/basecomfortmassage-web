@@ -236,19 +236,22 @@
 .gift-frame-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 1;
-    padding: 17%;
+    padding-bottom: 100%; /* Traditional aspect ratio technique for iOS WebKit */
+    height: 0;
+    overflow: hidden;
 }
 
 .gift-content-image {
-    width: 110%;
-    height: 110%;
+    position: absolute;
+    top: 7%;
+    left: 14%;
+    width: 72%;
+    height: 86%;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center center;
     display: block;
     border-radius: 2%;
-    clip-path: inset(10% 0% 10% 0%);
-    transform: translateX(3%);
+    transform: translateZ(0); /* Force GPU layer for iOS WebKit */
 }
 
 .gift-frame-image {
@@ -260,6 +263,7 @@
     object-fit: contain;
     pointer-events: none;
     z-index: 2;
+    transform: translateZ(0); /* Force GPU layer for iOS WebKit */
 }
 
 /* Image blob shapes for sections 7 & 8 */
@@ -306,15 +310,21 @@
 
 /* XL Screen adjustments for gift frame */
 @media (min-width: 1280px) {
-    .gift-frame-wrapper {
-        padding: 16%;
+    .gift-content-image {
+        top: 16%;
+        left: 16%;
+        width: 68%;
+        height: 68%;
     }
 }
 
 /* 2XL Screen adjustments for gift frame */
 @media (min-width: 1536px) {
-    .gift-frame-wrapper {
-        padding: 15%;
+    .gift-content-image {
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
     }
 }
 
