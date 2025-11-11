@@ -432,12 +432,50 @@
         padding-bottom: 0 !important;
     }
 
-    /* Instagram carousel - single row on mobile */
-    .instagram-carousel .insta-slide {
-        grid-template-columns: repeat(3, 1fr) !important;
+    /* Instagram carousel - mobile adjustments */
+    .social-section {
+        padding-top: 3.75rem !important; /* 60px instead of 85px */
+        padding-bottom: 3.75rem !important; /* 60px instead of 85px */
     }
 
-    .instagram-carousel .insta-photo:nth-child(n+4) {
+    .instagram-carousel .insta-slide {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important; /* 12px */
+        justify-content: center !important;
+    }
+
+    .instagram-carousel .insta-photo {
+        width: 100% !important;
+    }
+
+    .instagram-carousel .insta-photo:nth-child(n+3) {
         display: none !important;
+    }
+
+    .carousel-container {
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Position carousel buttons more to the edges on mobile */
+    .carousel-btn.carousel-prev {
+        left: -15px !important;
+        top: calc(50% - 15px) !important; /* Adjust to center with photos, not entire carousel */
+    }
+
+    .carousel-btn.carousel-next {
+        right: -15px !important;
+        top: calc(50% - 15px) !important; /* Adjust to center with photos, not entire carousel */
+    }
+
+    /* Make carousel buttons semi-transparent on mobile */
+    .carousel-btn {
+        background-color: rgba(162, 163, 126, 0.7) !important;
+        backdrop-filter: blur(4px);
+    }
+
+    .carousel-btn:hover {
+        background-color: rgba(200, 156, 108, 0.85) !important;
     }
 }
