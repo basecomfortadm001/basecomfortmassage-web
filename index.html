@@ -204,11 +204,12 @@
     </section>
 
     <!-- Section 9: Opening Hours -->
-    <section class="opening-hours bg-base-cream py-[85px] md:py-20 xl:py-28 2xl:py-36 px-5 md:px-12 xl:px-16 2xl:px-20 border-t border-base-gold">
-        <div class="hours-card max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto h-[400px] xl:h-[500px] 2xl:h-[600px] bg-cover bg-center rounded-t-[200px] xl:rounded-t-[250px] 2xl:rounded-t-[300px] border border-base-gold flex flex-col items-center justify-center text-center text-white p-16 xl:p-20 2xl:p-24" style="background-image: url('assets/open.png');">
+    <section class="opening-hours relative bg-cover bg-center py-[85px] md:py-20 xl:py-28 2xl:py-36 px-5 md:px-12 xl:px-16 2xl:px-20 border-t border-base-gold flex flex-col items-center justify-center text-center min-h-[400px] xl:min-h-[500px] 2xl:min-h-[600px]" style="background-image: url('assets/open.png');">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center text-white">
             <p class="hours-subtitle text-[14px] md:text-sm xl:text-base 2xl:text-lg tracking-widest mb-5 xl:mb-6 2xl:mb-8">MON – SUN</p>
-            <h2 class="hours-title text-[40px] leading-tight tracking-tight md:text-5xl xl:text-6xl 2xl:text-7xl md:leading-tight italic mb-8 xl:mb-10 2xl:mb-12">Open from Monday to Sunday</h2>
-            <button class="btn-primary bg-base-olive border border-base-olive text-white py-[14px] px-8 text-[15px] rounded-[40px] md:py-4 md:px-11 md:text-sm md:rounded-full xl:py-5 xl:px-14 2xl:py-6 2xl:px-16 xl:text-base 2xl:text-lg italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book your Massage</button>
+            <h2 class="hours-title text-[40px] leading-tight tracking-tight md:text-5xl xl:text-6xl 2xl:text-7xl md:leading-tight italic mb-8 xl:mb-10 2xl:mb-12 px-5">Open from Monday to Sunday</h2>
+            <button class="btn-primary bg-base-olive border border-base-olive text-white py-[14px] px-11 text-[15px] rounded-[40px] md:py-4 md:px-11 md:text-sm md:rounded-full xl:py-5 xl:px-14 2xl:py-6 2xl:px-16 xl:text-base 2xl:text-lg italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book your Massage</button>
         </div>
     </section>
 
