@@ -97,11 +97,13 @@
     .footer-accordion-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding-bottom: 0;
+        transition: max-height 0.3s ease, padding-bottom 0.3s ease;
     }
 
     .footer-accordion.active .footer-accordion-content {
         max-height: 300px;
+        padding-bottom: 0.75rem;
     }
 
     .footer-accordion.active .footer-accordion-icon {
@@ -131,9 +133,31 @@
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
+}
 
-    .footer-accordion.active .footer-accordion-content {
-        padding-bottom: 0.75rem;
+/* Massage list adjustments - Mobile only */
+@media (max-width: 767px) {
+    .massages-grid {
+        gap: 1.5rem !important;
+    }
+
+    .massage-item {
+        padding-bottom: 0 !important;
+    }
+
+    .massage-description {
+        display: none !important;
+    }
+
+    .massages-list .btn-primary {
+        margin-top: 3rem !important;
+    }
+}
+
+/* Massage list width constraint for desktop */
+@media (min-width: 768px) {
+    .massages-list {
+        max-width: 900px !important;
     }
 }
 
@@ -145,4 +169,71 @@
     .massages-list {
         max-width: calc(100% - 40px) !important;
     }
+}
+
+/* Gift card with frame overlay */
+.gift-frame-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    padding: 17%;
+}
+
+.gift-content-image {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    border-radius: 2%;
+    clip-path: inset(10% 0% 10% 0%);
+    transform: translateX(3%);
+}
+
+.gift-frame-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Image blob shapes for sections 7 & 8 */
+.image-blob-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+.image-blob-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 80px 80px 8px 8px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-blob-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.image-blob-wrapper-2 {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.image-blob-wrapper-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: ellipse(45% 50% at 50% 50%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-blob-wrapper-2:hover img {
+    transform: scale(1.05);
 }
