@@ -436,3 +436,15 @@
         background-color: rgba(200, 156, 108, 0.85) !important;
     }
 }
+
+/* Carousel buttons transparency for desktop */
+@media (min-width: 768px) {
+    .carousel-btn {
+        background-color: rgba(162, 163, 126, 0.7) !important;
+        backdrop-filter: blur(4px);
+    }
+
+    .carousel-btn:hover {
+        background-color: rgba(200, 156, 108, 0.85) !important;
+    }
+}
