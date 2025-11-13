@@ -67,7 +67,7 @@
             </div>
             <div class="flex gap-7 xl:gap-9 2xl:gap-12 items-center flex-1 justify-end">
                 <button class="btn-nav desktop-nav hidden md:block bg-transparent border border-base-tan text-base-tan py-3 px-7 xl:py-4 xl:px-9 2xl:py-5 2xl:px-11 rounded-full cursor-pointer text-sm xl:text-base 2xl:text-lg italic font-serif transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-olive hover:text-white hover:border-base-olive hover:-rotate-[5deg]">Contact</button>
-                <button class="btn-primary bg-base-olive border border-base-olive text-white py-2.5 px-5 text-[13px] rounded-[40px] md:py-3 md:px-7 md:text-sm md:rounded-full xl:py-4 xl:px-9 2xl:py-5 2xl:px-11 xl:text-base 2xl:text-lg italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book Now</button>
+                <button class="btn-primary bg-base-olive border border-base-olive text-white py-2 px-4 text-[12px] rounded-[40px] md:py-3 md:px-7 md:text-sm md:rounded-full xl:py-4 xl:px-9 2xl:py-5 2xl:px-11 xl:text-base 2xl:text-lg italic font-serif cursor-pointer transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-base-gold hover:border-base-gold hover:-rotate-[5deg]">Book Now</button>
             </div>
         </div>
     </nav>
@@ -82,7 +82,7 @@
                 <li class="mobile-menu-item border-b border-base-gold/20"><a href="#about" class="block py-[18px] px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">About us</a></li>
                 <li class="mobile-menu-item border-b border-base-gold/20"><a href="#contact" class="block py-[18px] px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Chat via WhatsApp</a></li>
                 <li class="mobile-menu-item border-b border-base-gold/20"><a href="#contact" class="block py-[18px] px-8 text-base-text no-underline text-lg transition-colors duration-300 hover:bg-base-gray/30">Contact</a></li>
-                <li class="mobile-menu-item mobile-menu-cta"><a href="#book" class="block mt-8 mx-8 py-4 text-center bg-base-olive text-white no-underline text-lg font-bold rounded-full transition-colors duration-300 hover:bg-base-gold">Book Now</a></li>
+                <li class="mobile-menu-item mobile-menu-cta"><a href="#book" class="block mt-8 mx-8 py-3 px-4 text-center bg-base-olive text-white no-underline text-base font-bold rounded-full transition-colors duration-300 hover:bg-base-gold">Book Now</a></li>
             </ul>
         </div>
     </div>
@@ -260,11 +260,17 @@
     <footer class="footer bg-base-gray py-[60px] md:py-16 xl:py-20 2xl:py-24 px-5 md:px-12 xl:px-16 2xl:px-20 border-t border-base-gold text-base-text">
         <div class="footer-content max-w-7xl xl:max-w-[90rem] 2xl:max-w-[110rem] mx-auto grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-20 xl:gap-24 2xl:gap-28">
             <div class="footer-main">
-                <div class="footer-logo mb-5 xl:mb-6 2xl:mb-8">
-                    <img src="assets/icon_base_gpt.png" alt="Base Comfort" class="h-16 md:h-20 xl:h-24 2xl:h-28 w-auto">
+                <div class="flex items-start justify-between mb-5 md:block xl:mb-6 2xl:mb-8">
+                    <div class="footer-logo md:mb-5 xl:md:mb-6 2xl:md:mb-8">
+                        <img src="assets/icon_base_gpt.png" alt="Base Comfort" class="h-16 md:h-20 xl:h-24 2xl:h-28 w-auto">
+                    </div>
+                    <div class="md:hidden flex flex-col items-end justify-start gap-1">
+                        <p class="footer-contact text-sm font-sans m-0">info@basecomfort.nl</p>
+                        <p class="footer-contact text-sm font-sans m-0">+31 30 123 4567</p>
+                    </div>
                 </div>
-                <p class="footer-contact text-sm xl:text-base 2xl:text-lg mb-2.5 xl:mb-3 2xl:mb-4 font-sans">info@basecomfort.nl</p>
-                <p class="footer-contact text-sm xl:text-base 2xl:text-lg mb-2.5 xl:mb-3 2xl:mb-4 font-sans">+31 30 123 4567</p>
+                <p class="footer-contact hidden md:block text-sm xl:text-base 2xl:text-lg mb-2.5 xl:mb-3 2xl:mb-4 font-sans">info@basecomfort.nl</p>
+                <p class="footer-contact hidden md:block text-sm xl:text-base 2xl:text-lg mb-2.5 xl:mb-3 2xl:mb-4 font-sans">+31 30 123 4567</p>
                 <div class="newsletter mt-7 xl:mt-9 2xl:mt-10 flex gap-2.5 xl:gap-3 2xl:gap-4">
                     <input type="email" placeholder="Your email" class="newsletter-input flex-1 py-3 xl:py-4 2xl:py-5 px-5 xl:px-6 2xl:px-7 border border-base-text rounded-full text-sm xl:text-base 2xl:text-lg bg-transparent font-sans text-base-text placeholder:text-base-text/70">
                     <button class="btn-newsletter bg-base-olive border border-base-olive text-white py-[14px] px-8 text-[15px] rounded-[40px] md:py-3 md:px-7 md:text-sm md:rounded-full xl:py-4 xl:px-9 2xl:py-5 2xl:px-11 xl:text-base 2xl:text-lg font-serif cursor-pointer transition-all duration-300 hover:bg-base-gold hover:border-base-gold">Subscribe</button>
