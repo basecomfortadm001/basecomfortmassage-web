@@ -202,14 +202,14 @@
 
     /* Gift card section mobile adjustments - match sections 6 & 8 */
     .gift-card-section {
-        padding-top: 5rem !important;
+        padding-top: 1.5rem !important;
         padding-bottom: 5rem !important;
-        padding-left: 3rem !important;
-        padding-right: 3rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
     .gift-card-section .promo-card {
-        gap: 3rem !important;
+        gap: 0rem !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
@@ -217,8 +217,8 @@
     .gift-card-section .card-image {
         width: 100% !important;
         max-width: 100% !important;
-        margin-top: -5.5rem !important;
-        margin-bottom: -5.5rem !important;
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
     }
 
     .gift-card-section .card-content h2 {
