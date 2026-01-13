@@ -78,7 +78,7 @@ function getOpeningHours(showButton = true) {
 
     return `
     <section class="opening-hours bg-base-tan py-16 md:py-20 xl:py-24 2xl:py-28 px-5 md:px-12 xl:px-16 2xl:px-20 border-t border-base-gold">
-        <div class="hours-card max-w-5xl mx-auto h-[280px] md:h-[350px] xl:h-[450px] 2xl:h-[500px] bg-cover bg-center rounded-t-[200px] md:rounded-t-[225px] xl:rounded-t-[250px] 2xl:rounded-t-[275px] border border-base-gold flex flex-col items-center justify-center text-center text-white p-12 md:p-16 xl:p-20 2xl:p-24" style="background-image: url('../assets/open.png');">
+        <div class="hours-card max-w-5xl mx-auto h-[280px] md:h-[350px] xl:h-[450px] 2xl:h-[500px] bg-cover bg-center rounded-t-[200px] md:rounded-t-[225px] xl:rounded-t-[250px] 2xl:rounded-t-[275px] border border-base-gold flex flex-col items-center justify-center text-center text-white p-12 md:p-16 xl:p-20 2xl:p-24" style="background-image: url('../files/outside/uit_01.jpg');">
             <p class="hours-subtitle text-xs md:text-sm xl:text-sm 2xl:text-base tracking-widest mb-4 md:mb-5 font-sans">MA – ZO</p>
             <h2 class="hours-title text-3xl md:text-4xl xl:text-[3.5rem] 2xl:text-6xl italic mb-8 md:mb-10">Geopend van maandag tot zondag</h2>
             ${buttonHtml}
