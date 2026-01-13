@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Reserva Cal.com</title>
+    <!-- Tailwind CSS (CDN para pruebas rápidas) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Tarjeta contenedora -->
+    <div class="bg-white rounded-xl shadow-lg w-full max-w-5xl overflow-hidden">
+        
+        <!-- Cabecera -->
+        <div class="bg-blue-600 p-6 text-center">
+            <h1 class="text-white text-2xl font-bold">Prueba de Integración</h1>
+            <p class="text-blue-100">Selecciona una fecha abajo para probar el sistema</p>
+        </div>
+
+        <!-- Contenedor del Calendario -->
+        <div class="h-[600px] w-full p-4">
+            <!-- AQUÍ SE CARGA EL WIDGET -->
+            <div id="my-cal-inline" style="width:100%;height:100%;overflow:scroll"></div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT DE INTEGRACIÓN CAL.COM -->
+    <script>
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === "init") { let api = function () { p(api, arguments); }; let namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", {origin:"https://app.cal.eu/"});
+
+      Cal("inline", {
+        elementOrSelector:"#my-cal-inline",
+        
+        // ------------------------------------------------------
+        // 👇 CAMBIA ESTO POR TU USUARIO Y EVENTO REAL
+        // Ejemplo: "juanperez/test-reserva"
+        calLink: "omare13/sports-massage-90-minutes", 
+        // ------------------------------------------------------
+
+        layout: "month_view"
+      });
+
+      Cal("ui", {"styles":{"branding":{"brandColor":"#2563EB"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+
+</body>
+</html>
